@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MineServe — Dedicated Minecraft Servers in Your Pocket (Android)</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="MineServe — Dedicated Minecraft Servers in Your Pocket (Android)">
+  <meta name="description" content="Host full-featured Paper, Purpur, Fabric, NeoForge, and Vanilla Minecraft servers directly on your Android phone without root. Features isolated OpenJDK runtimes, live interactive console, plugin browser, and snapshot backups.">
+  <meta name="keywords" content="Minecraft, Minecraft Server, Android, PRoot, PaperMC, Purpur, FabricMC, NeoForge, Bedrock, GeyserMC, Server Host, OpenJDK, Java 21, Java 17, Java 8, No Root, Open Source">
+  <meta name="author" content="devwithzachary">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mineserve.app">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mineserve.app/">
+  <meta property="og:title" content="MineServe — Dedicated Minecraft Servers on Android">
+  <meta property="og:description" content="Host full-featured Paper, Purpur, Fabric, and Vanilla Minecraft servers directly on your Android device without root.">
+  <meta property="og:image" content="https://mineserve.app/assets/screenshots/dashboard.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mineserve.app/">
+  <meta property="twitter:title" content="MineServe — Dedicated Minecraft Servers on Android">
+  <meta property="twitter:description" content="Host full-featured Paper, Purpur, Fabric, and Vanilla Minecraft servers directly on your Android device without root.">
+  <meta property="twitter:image" content="https://mineserve.app/assets/screenshots/dashboard.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Umami Analytics -->
+  <script defer src="https://stats.devwithzachary.com/stats" data-website-id="0f927c80-a65d-484a-ac6d-f5de10c83bec"></script>
+</head>
+<body class="bg-obsidian text-slate-100 antialiased selection:bg-emerald-500 selection:text-black">
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
+  <div class="ambient-glow glow-top-right" aria-hidden="true"></div>
+  <div class="ambient-glow glow-center" aria-hidden="true"></div>
+
+  <!-- Header / Navigation -->
+  <header class="sticky-nav">
+    <div class="nav-container">
+      <a href="#hero" class="brand" data-umami-event="nav-brand-click">
+        <img src="assets/logo.png" alt="MineServe Logo" class="brand-logo" width="38" height="38">
+        <span class="brand-name">MineServe</span>
+        <span class="brand-badge">v1.0.0</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#features" class="nav-link" data-umami-event="nav-features">Features</a>
+        <a href="#showcase" class="nav-link" data-umami-event="nav-showcase">Showcase</a>
+        <a href="#engines" class="nav-link" data-umami-event="nav-engines">Engines</a>
+        <a href="#architecture" class="nav-link" data-umami-event="nav-architecture">How It Works</a>
+        <a href="#faq" class="nav-link" data-umami-event="nav-faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://discord.gg/csGrrg5MGF" target="_blank" rel="noopener noreferrer" class="btn btn-discord" data-umami-event="nav-discord-btn" title="Join Discord Community">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+          </svg>
+          <span>Discord</span>
+        </a>
+
+        <a href="https://github.com/devwithzachary/MineServe" target="_blank" rel="noopener noreferrer" class="btn btn-github" data-umami-event="nav-github-btn" title="View Source on GitHub">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://github.com/devwithzachary/MineServe/releases" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-umami-event="nav-download-btn">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span>Download APK</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" data-umami-event="toggle-mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <nav class="mobile-nav-links">
+        <a href="#features" class="mobile-nav-link" data-umami-event="mobile-nav-features">Features</a>
+        <a href="#showcase" class="mobile-nav-link" data-umami-event="mobile-nav-showcase">Showcase</a>
+        <a href="#engines" class="mobile-nav-link" data-umami-event="mobile-nav-engines">Engines</a>
+        <a href="#architecture" class="mobile-nav-link" data-umami-event="mobile-nav-architecture">How It Works</a>
+        <a href="#faq" class="mobile-nav-link" data-umami-event="mobile-nav-faq">FAQ</a>
+        <div class="mobile-btn-group">
+          <a href="https://github.com/devwithzachary/MineServe/releases" class="btn btn-primary btn-full" data-umami-event="mobile-nav-download">Download Latest APK</a>
+          <a href="https://discord.gg/csGrrg5MGF" class="btn btn-discord btn-full" data-umami-event="mobile-nav-discord">Join Discord Community</a>
+          <a href="https://github.com/devwithzachary/MineServe" class="btn btn-github btn-full" data-umami-event="mobile-nav-github">View GitHub Repository</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>100% Rootless • OpenJDK 8–25 • PRoot Container</span>
+        </div>
+
+        <h1 class="hero-title">
+          Dedicated Minecraft Servers. <br>
+          <span class="gradient-text">In Your Pocket.</span>
+        </h1>
+
+        <p class="hero-description">
+          Run high-performance <strong>PaperMC</strong>, <strong>Purpur</strong>, <strong>Fabric</strong>, <strong>NeoForge</strong>, and <strong>Vanilla</strong> Minecraft servers directly on your Android phone or tablet with zero root permissions required.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" data-umami-event="hero-download-apk">
+            <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span>Download APK (Free)</span>
+          </a>
+
+          <a href="https://discord.gg/csGrrg5MGF" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" data-umami-event="hero-join-discord">
+            <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+            </svg>
+            <span>Join Discord</span>
+          </a>
+        </div>
+
+        <!-- Quick Spec Highlights -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value">Android 8.0+</span>
+            <span class="stat-label">Min SDK 26 (ARM64 / x86_64)</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">Zero Root</span>
+            <span class="stat-label">100% User-Space Sandbox</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">OpenJDK 8–25</span>
+            <span class="stat-label">Multi-Runtime Isolation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Phone Showcase Mockup -->
+      <div class="hero-mockup-wrapper">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="assets/screenshots/dashboard.png" alt="MineServe Dashboard on Android" class="phone-img" loading="eager">
+          </div>
+        </div>
+        <div class="mockup-floating-card top-right-card">
+          <div class="status-indicator-live"></div>
+          <div>
+            <div class="floating-card-title">Live Server Online</div>
+            <div class="floating-card-sub">PaperMC 26.2 • Port 25565</div>
+          </div>
+        </div>
+        <div class="mockup-floating-card bottom-left-card">
+          <div class="floating-card-icon">⚡</div>
+          <div>
+            <div class="floating-card-title">2048 MB RAM Active</div>
+            <div class="floating-card-sub">Foreground Service &amp; WakeLock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive App Showcase / Screenshots Carousel -->
+  <section id="showcase" class="section showcase-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Real Device Screenshots</span>
+        <h2 class="section-title">Designed for Power. Crafted for Mobile.</h2>
+        <p class="section-subtitle">Take a tour of the native Jetpack Compose interface running directly on Android hardware.</p>
+      </div>
+
+      <!-- Screenshot Tabs Navigation -->
+      <div class="showcase-tabs" role="tablist" aria-label="Feature Showcase Screens">
+        <button class="showcase-tab active" data-target="dashboard" role="tab" aria-selected="true" data-umami-event="showcase-tab-dashboard">
+          <span>📊 Dashboard</span>
+        </button>
+        <button class="showcase-tab" data-target="wizard" role="tab" aria-selected="false" data-umami-event="showcase-tab-wizard">
+          <span>🧙 Server Wizard</span>
+        </button>
+        <button class="showcase-tab" data-target="console" role="tab" aria-selected="false" data-umami-event="showcase-tab-console">
+          <span>💻 Live Terminal</span>
+        </button>
+        <button class="showcase-tab" data-target="settings-tab" role="tab" aria-selected="false" data-umami-event="showcase-tab-settings">
+          <span>⚙️ Properties &amp; Config</span>
+        </button>
+        <button class="showcase-tab" data-target="plugins" role="tab" aria-selected="false" data-umami-event="showcase-tab-plugins">
+          <span>🧩 Modrinth Browser</span>
+        </button>
+        <button class="showcase-tab" data-target="runtimes" role="tab" aria-selected="false" data-umami-event="showcase-tab-runtimes">
+          <span>☕ Java Environments</span>
+        </button>
+      </div>
+
+      <!-- Showcase Display Card -->
+      <div class="showcase-card">
+        <div class="showcase-preview-frame">
+          <img id="showcase-img" src="assets/screenshots/dashboard.png" alt="MineServe Dashboard Screen" class="showcase-image">
+        </div>
+
+        <div class="showcase-details">
+          <div class="showcase-tag" id="showcase-tag">DASHBOARD &amp; TELEMETRY</div>
+          <h3 class="showcase-heading" id="showcase-heading">Real-Time Server Hub</h3>
+          <p class="showcase-description" id="showcase-desc">
+            Instantly view active servers, allocated RAM, resident memory consumption via /proc, live player counts, and LAN connection status. Start, stop, or open terminal sessions with a single tap.
+          </p>
+
+          <div class="showcase-bullets" id="showcase-bullets">
+            <div class="bullet-item">
+              <span class="bullet-check">✓</span>
+              <span><strong>Live Metrics:</strong> Active RAM, CPU usage, and per-server storage footprints.</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-check">✓</span>
+              <span><strong>1-Tap Actions:</strong> Immediate Start, Stop, and Live Console buttons.</span>
+            </div>
+            <div class="bullet-item">
+              <span class="bullet-check">✓</span>
+              <span><strong>Persistent Foreground Service:</strong> Active servers remain online when switching apps or locking your phone.</span>
+            </div>
+          </div>
+
+          <div class="showcase-actions">
+            <a href="https://github.com/devwithzachary/MineServe/releases" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-umami-event="showcase-download-btn">
+              Download Latest APK
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Grid -->
+  <section id="features" class="section features-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Engineered for Performance</span>
+        <h2 class="section-title">Everything Needed to Host Minecraft on Mobile</h2>
+        <p class="section-subtitle">MineServe bundles an entire Linux container stack, isolated Java JDKs, and terminal subsystems into one clean app.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon emerald-glow">🔒</div>
+          <h3 class="feature-title">100% Rootless Sandbox</h3>
+          <p class="feature-desc">
+            Executes entirely in Android user space using native PRoot ptrace system call interception. No Magisk, root privileges, or bootloader unlocking required.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon orange-glow">☕</div>
+          <h3 class="feature-title">Multi-Version OpenJDK Isolation</h3>
+          <p class="feature-desc">
+            One-tap automated installation of OpenJDK 8, 17, 21, and 25 runtimes inside the container to run any Minecraft version from legacy 1.12 to 1.21+.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon cyan-glow">⚡</div>
+          <h3 class="feature-title">Interactive VT100 Terminal</h3>
+          <p class="feature-desc">
+            Native JNI pseudo-terminal (PTY) with full ANSI colors, command dispatching, log clearing, and quick action chips for <code>/op</code>, <code>/whitelist</code>, and <code>/save-all</code>.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon purple-glow">🧩</div>
+          <h3 class="feature-title">Modrinth Plugins &amp; Mods</h3>
+          <p class="feature-desc">
+            Search, browse project descriptions, and 1-tap install mods or Bukkit/Paper plugins directly from Modrinth, with support for uploading custom <code>.jar</code> files.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon blue-glow">🌐</div>
+          <h3 class="feature-title">Instant LAN &amp; Port Sharing</h3>
+          <p class="feature-desc">
+            Automatic local port allocation with persistent IP display cards (<code>&lt;ip&gt;:&lt;port&gt;</code>), 1-tap clipboard copying, and GeyserMC cross-play support for Bedrock players.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon green-glow">💾</div>
+          <h3 class="feature-title">Snapshot Backups &amp; Export</h3>
+          <p class="feature-desc">
+            Fast zip backups of world saves or entire server directories with instant 1-tap rollback restoration and direct export to the Android Downloads folder.
+          </p>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="feature-card">
+          <div class="feature-icon red-glow">⚙️</div>
+          <h3 class="feature-title">Visual &amp; Raw Config Editor</h3>
+          <p class="feature-desc">
+            Intuitive sliders and switches for MOTD, game mode, difficulty, view distance, and PVP, plus an in-app raw text editor for <code>server.properties</code> and YAML configs.
+          </p>
+        </div>
+
+        <!-- Feature 8 -->
+        <div class="feature-card">
+          <div class="feature-icon amber-glow">🛡️</div>
+          <h3 class="feature-title">Background Service &amp; WakeLock</h3>
+          <p class="feature-desc">
+            Dedicated Android Foreground Service with CPU WakeLock protection keeps your Minecraft world alive when switching apps or locking your screen.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported Server Engines -->
+  <section id="engines" class="section engines-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Server Platform Matrix</span>
+        <h2 class="section-title">Support for Every Major Minecraft Engine</h2>
+        <p class="section-subtitle">Choose from optimized forks, regionized multithreading, modular modding toolchains, or official vanilla builds.</p>
+      </div>
+
+      <div class="engines-grid">
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-paper">PaperMC</span>
+            <span class="engine-license">GPL-3.0</span>
+          </div>
+          <h3 class="engine-title">Paper</h3>
+          <p class="engine-desc">High-performance Minecraft server fork designed for speed, security, and extensive Bukkit/Spigot/Paper plugin support.</p>
+          <div class="engine-meta">Java 17, 21, 25 • Plugins Tab</div>
+        </div>
+
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-purpur">PurpurMC</span>
+            <span class="engine-license">MIT</span>
+          </div>
+          <h3 class="engine-title">Purpur</h3>
+          <p class="engine-desc">Drop-in replacement for Paper with extensive gameplay customization, configurable mob mechanics, and performance optimizations.</p>
+          <div class="engine-meta">Java 17, 21, 25 • Plugins Tab</div>
+        </div>
+
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-geyser">Cross-Play</span>
+            <span class="engine-license">Bedrock</span>
+          </div>
+          <h3 class="engine-title">Paper + GeyserMC</h3>
+          <p class="engine-desc">Java Paper server pre-configured with Geyser and Floodgate to allow iOS, Android, and console Bedrock players to join seamlessly.</p>
+          <div class="engine-meta">Java 21, 25 • Bedrock Protocol Bridge</div>
+        </div>
+
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-fabric">FabricMC</span>
+            <span class="engine-license">Apache 2.0</span>
+          </div>
+          <h3 class="engine-title">Fabric</h3>
+          <p class="engine-desc">Lightweight, modular modding framework and server platform for modern Minecraft versions, snapshots, and performance mods (Lithium, FerriteCore).</p>
+          <div class="engine-meta">Java 17, 21, 25 • Mods Tab</div>
+        </div>
+
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-neoforge">NeoForged</span>
+            <span class="engine-license">LGPL-2.1</span>
+          </div>
+          <h3 class="engine-title">NeoForge</h3>
+          <p class="engine-desc">Modern community-driven modding API and server platform for complex modpacks and custom gameplay mechanics.</p>
+          <div class="engine-meta">Java 21, 25 • Mods Tab</div>
+        </div>
+
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-vanilla">Mojang</span>
+            <span class="engine-license">Proprietary</span>
+          </div>
+          <h3 class="engine-title">Vanilla Minecraft</h3>
+          <p class="engine-desc">Official standalone dedicated server software directly from Mojang Studios for standard unmodded survival and creative worlds.</p>
+          <div class="engine-meta">Java 8, 17, 21, 25 • Clean Vanilla</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Architecture / How It Works -->
+  <section id="architecture" class="section architecture-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Deep Dive</span>
+        <h2 class="section-title">Under the Hood Architecture</h2>
+        <p class="section-subtitle">How MineServe runs a desktop-grade Linux container and Java virtual machine entirely in Android user space.</p>
+      </div>
+
+      <div class="architecture-flow">
+        <div class="arch-step">
+          <div class="arch-number">01</div>
+          <div class="arch-content">
+            <h4>Android Jetpack Compose UI</h4>
+            <p>Modern Material 3 interface controlling server state, telemetry charts, Modrinth queries, and visual config properties.</p>
+          </div>
+        </div>
+
+        <div class="arch-connector">↓</div>
+
+        <div class="arch-step">
+          <div class="arch-number">02</div>
+          <div class="arch-content">
+            <h4>Foreground Service &amp; WakeLock Engine</h4>
+            <p>Guarantees persistent CPU scheduling, manages notifications with live player stats, and prevents Android Doze from killing processes.</p>
+          </div>
+        </div>
+
+        <div class="arch-connector">↓</div>
+
+        <div class="arch-step">
+          <div class="arch-number">03</div>
+          <div class="arch-content">
+            <h4>JNI Native Pseudo-Terminal (PTY)</h4>
+            <p>Direct POSIX openpty bridge providing two-way standard input/output streaming, ANSI color rendering, and VT100 console emulation.</p>
+          </div>
+        </div>
+
+        <div class="arch-connector">↓</div>
+
+        <div class="arch-step">
+          <div class="arch-number">04</div>
+          <div class="arch-content">
+            <h4>PRoot Container &amp; Ubuntu 24.04 Rootfs</h4>
+            <p>Ptrace syscall interception provides a rootless chroot container with isolated <code>/servers</code>, <code>/tmp</code>, and unprivileged user namespace.</p>
+          </div>
+        </div>
+
+        <div class="arch-connector">↓</div>
+
+        <div class="arch-step">
+          <div class="arch-number">05</div>
+          <div class="arch-content">
+            <h4>Isolated OpenJDK Runtimes &amp; Server Process</h4>
+            <p>Spawns Java 8, 17, 21, or 25 with configured RAM allocations (e.g. <code>-Xms1024M -Xmx2048M</code>) and Aikar's garbage collection flags.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq" class="section faq-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Frequently Asked Questions</span>
+        <h2 class="section-title">Got Questions? We Have Answers.</h2>
+        <p class="section-subtitle">Everything you need to know about setting up and playing on MineServe.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <!-- FAQ 1 -->
+        <details class="faq-item" data-umami-event="faq-toggle-root">
+          <summary class="faq-question">
+            <span>Does MineServe require root access or unlocking the bootloader?</span>
+            <span class="faq-chevron">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>No root access is required whatsoever.</strong> MineServe uses PRoot (ptrace-based virtualization) to create a user-space Linux environment inside the app's private sandbox. It runs safely on stock Android devices without modifying system partitions.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="faq-item" data-umami-event="faq-toggle-lan">
+          <summary class="faq-question">
+            <span>How do my friends join the server from their PC, phone, or console?</span>
+            <span class="faq-chevron">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>Over Local Wi-Fi:</strong> Anyone connected to the same Wi-Fi network can join by entering your phone's local IP address and port (displayed in the app) in their Minecraft Multiplayer screen.</p>
+            <p><strong>Over Mobile Hotspot:</strong> Enable your phone's personal hotspot and have other players connect their Wi-Fi to your hotspot to play anywhere on the go.</p>
+            <p><strong>Over the Internet:</strong> You can use free tunneling tools like <strong>Playit.gg</strong> or <strong>ngrok</strong> to expose your server port safely to friends over the public internet.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="faq-item" data-umami-event="faq-toggle-bedrock">
+          <summary class="faq-question">
+            <span>Can Bedrock players (iOS, Android, Xbox, PlayStation, Switch) join?</span>
+            <span class="faq-chevron">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>Yes!</strong> When creating a server in the wizard, select <strong>"Paper + Geyser (Cross-Play)"</strong>. This automatically sets up GeyserMC and Floodgate translation proxies so Bedrock players can join the Java server seamlessly.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="faq-item" data-umami-event="faq-toggle-ram">
+          <summary class="faq-question">
+            <span>How much RAM should I allocate to my server?</span>
+            <span class="faq-chevron">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>For standard vanilla or Paper play with 2–5 players, <strong>2048 MB (2 GB)</strong> is recommended. For heavier modpacks (Fabric/NeoForge) or high chunk view distances, <strong>3 GB to 4 GB</strong> is ideal. MineServe allows you to adjust RAM allocation using both a slider and manual numeric input.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 5 -->
+        <details class="faq-item" data-umami-event="faq-toggle-android">
+          <summary class="faq-question">
+            <span>What Android versions and processor architectures are supported?</span>
+            <span class="faq-chevron">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>MineServe supports <strong>Android 8.0 (API 26) and higher</strong>. It includes optimized native PRoot binaries for <strong>ARM64 (aarch64)</strong>, <strong>x86_64</strong>, and <strong>ARMv7 (armeabi-v7a)</strong> architectures.</p>
+          </div>
+        </details>
+
+        <!-- FAQ 6 -->
+        <details class="faq-item" data-umami-event="faq-toggle-background">
+          <summary class="faq-question">
+            <span>Will Android terminate my server when I switch apps or lock my screen?</span>
+            <span class="faq-chevron">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>MineServe runs inside a persistent Android <strong>Foreground Service</strong> backed by a CPU <code>WakeLock</code>. As long as notification permissions are granted, Android will not kill your active server when multitasking or locking your screen.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community & Support CTA Banner -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <h2 class="cta-title">Join the MineServe Community</h2>
+          <p class="cta-desc">
+            Connect with other server creators, share custom configs, get troubleshooting help, and test early beta builds.
+          </p>
+          <div class="cta-buttons">
+            <a href="https://discord.gg/csGrrg5MGF" target="_blank" rel="noopener noreferrer" class="btn btn-discord btn-lg" data-umami-event="cta-discord-btn">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              <span>Join Discord Community</span>
+            </a>
+
+            <a href="https://github.com/devwithzachary/MineServe" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" data-umami-event="cta-github-btn">
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub Repository</span>
+            </a>
+          </div>
+
+          <div class="support-links">
+            <span class="support-label">Support Development:</span>
+            <a href="https://patreon.com/devwithzachary" target="_blank" rel="noopener noreferrer" class="support-link patreon-link" data-umami-event="support-patreon-link">❤️ Patreon</a>
+            <span class="support-dot">•</span>
+            <a href="https://buymeacoffee.com/linuxonandroid" target="_blank" rel="noopener noreferrer" class="support-link bmac-link" data-umami-event="support-bmac-link">☕ Buy Me a Coffee</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="assets/logo.png" alt="MineServe Logo" class="brand-logo" width="32" height="32">
+            <span class="brand-name">MineServe</span>
+          </div>
+          <p class="footer-tagline">Dedicated Minecraft Servers in Your Pocket.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <h4 class="footer-heading">Navigation</h4>
+            <ul class="footer-list">
+              <li><a href="#features" data-umami-event="footer-features">Features</a></li>
+              <li><a href="#showcase" data-umami-event="footer-showcase">Showcase</a></li>
+              <li><a href="#engines" data-umami-event="footer-engines">Supported Engines</a></li>
+              <li><a href="#architecture" data-umami-event="footer-architecture">Architecture</a></li>
+              <li><a href="#faq" data-umami-event="footer-faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">Community &amp; Code</h4>
+            <ul class="footer-list">
+              <li><a href="https://discord.gg/csGrrg5MGF" target="_blank" rel="noopener noreferrer" data-umami-event="footer-discord">Discord Server</a></li>
+              <li><a href="https://github.com/devwithzachary/MineServe" target="_blank" rel="noopener noreferrer" data-umami-event="footer-github">GitHub Repository</a></li>
+              <li><a href="https://github.com/devwithzachary/MineServe/releases" target="_blank" rel="noopener noreferrer" data-umami-event="footer-releases">Releases &amp; APKs</a></li>
+              <li><a href="https://github.com/devwithzachary/MineServe/issues" target="_blank" rel="noopener noreferrer" data-umami-event="footer-issues">Report an Issue</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-heading">Support</h4>
+            <ul class="footer-list">
+              <li><a href="https://patreon.com/devwithzachary" target="_blank" rel="noopener noreferrer" data-umami-event="footer-patreon">Patreon</a></li>
+              <li><a href="https://buymeacoffee.com/linuxonandroid" target="_blank" rel="noopener noreferrer" data-umami-event="footer-bmac">Buy Me a Coffee</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-disclaimer">
+          <strong>Disclaimer:</strong> MineServe is an independent open-source project and is <strong>NOT</strong> an official Minecraft product. It is not approved by, associated with, or affiliated with Mojang Studios or Microsoft. Minecraft is a registered trademark of Mojang Synergies AB.
+        </p>
+        <div class="footer-copy">
+          <span>&copy; 2026 MineServe. Licensed under GPL-3.0.</span>
+          <a href="https://mineserve.app" class="footer-domain-link">mineserve.app</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
