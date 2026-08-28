@@ -1,5 +1,5 @@
 /**
- * MineServe Landing Page — Interactive Showcase & Scripts
+ * MineServe Landing Page - Interactive Showcase & Scripts
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -88,7 +88,7 @@ const showcaseData = {
   },
   runtimes: {
     tag: 'RUNTIME ENVIRONMENT',
-    heading: 'Isolated OpenJDK 8–25',
+    heading: 'Isolated OpenJDK 8-25',
     img: 'assets/screenshots/settings.png',
     desc: 'MineServe installs and isolates official OpenJDK runtimes inside the container sandbox, ensuring exact version compatibility with your Minecraft world.',
     bullets: [
