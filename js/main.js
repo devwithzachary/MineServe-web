@@ -1,30 +1,61 @@
 /**
- * MineServe Landing Page - Interactive Showcase & Scripts
+ * MineServe Landing Page - Interactive Showcase, Sticky Bar & Mobile Scripts
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initShowcaseTabs();
+  initStickyMobileBar();
   initFaqTracking();
 });
 
-// Mobile Navigation Toggle
+// Mobile Navigation Drawer Controller
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobile-toggle');
   const drawer = document.getElementById('mobile-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
 
   if (!toggleBtn || !drawer) return;
 
+  function openDrawer() {
+    drawer.classList.add('open');
+    if (backdrop) backdrop.classList.add('active');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('drawer-open');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('drawer-open');
+  }
+
   toggleBtn.addEventListener('click', () => {
-    const isOpen = drawer.classList.toggle('open');
-    toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
   });
 
-  // Close drawer on link click
-  drawer.querySelectorAll('.mobile-nav-link').forEach(link => {
+  // Close on backdrop tap
+  if (backdrop) {
+    backdrop.addEventListener('click', closeDrawer);
+  }
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
+
+  // Close on link click
+  drawer.querySelectorAll('.mobile-nav-link, .mobile-btn-group a').forEach(link => {
     link.addEventListener('click', () => {
-      drawer.classList.remove('open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
+      closeDrawer();
     });
   });
 }
@@ -125,6 +156,9 @@ function initShowcaseTabs() {
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
 
+      // Scroll tab into view horizontally on mobile
+      tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
       // Animate transition
       imgEl.style.opacity = '0.3';
       setTimeout(() => {
@@ -144,6 +178,37 @@ function initShowcaseTabs() {
       }, 150);
     });
   });
+}
+
+// Mobile Sticky Quick Download Bar Controller
+function initStickyMobileBar() {
+  const stickyBar = document.getElementById('mobile-sticky-bar');
+  const heroSection = document.getElementById('hero');
+
+  if (!stickyBar || !heroSection) return;
+
+  let ticking = false;
+
+  function updateStickyBar() {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight - 100;
+    const scrollPos = window.scrollY || window.pageYOffset;
+
+    if (scrollPos > heroBottom) {
+      stickyBar.classList.add('visible');
+    } else {
+      stickyBar.classList.remove('visible');
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateStickyBar);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateStickyBar();
 }
 
 // Track FAQ open/close events for Umami
