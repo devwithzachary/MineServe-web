@@ -216,8 +216,8 @@
         <!-- Quick Spec Highlights -->
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-value">Android 8.0+</span>
-            <span class="stat-label">Min SDK 26 (ARM64 / x86_64)</span>
+            <span class="stat-value">Android 6.0+</span>
+            <span class="stat-label">Min SDK 23 (ARM64 / x86_64)</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
@@ -386,14 +386,64 @@
         <!-- Feature 3 -->
         <div class="feature-card">
           <div class="feature-icon cyan-glow">⚡</div>
-          <h3 class="feature-title">Interactive VT100 Terminal</h3>
+          <h3 class="feature-title">Interactive Live Terminal</h3>
           <p class="feature-desc">
-            Native JNI pseudo-terminal (PTY) with full ANSI colors, command dispatching, log clearing, and quick action
-            chips for <code>/op</code>, <code>/whitelist</code>, and <code>/save-all</code>.
+            Native JNI pseudo-terminal (PTY) with ANSI colors, customizable macro hotbar chips, slash command auto-completion,
+            command history recall, and draggable selection.
           </p>
         </div>
 
         <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon blue-glow">🌐</div>
+          <h3 class="feature-title">Zero-Port-Forwarding Tunneling</h3>
+          <p class="feature-desc">
+            Host multiplayer over cellular or restrictive Wi-Fi with built-in <strong>bore.pub</strong> instant free tunnels
+            and <strong>Playit.gg</strong> persistent subdomains, plus dynamic QR code sharing.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon purple-glow">💤</div>
+          <h3 class="feature-title">Smart Sleep &amp; Auto-Wake</h3>
+          <p class="feature-desc">
+            Preserve phone battery with idle auto-shutdown when zero players are online, and automatically spin up the server
+            when players ping or join from their in-game server list.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon amber-glow">⏱️</div>
+          <h3 class="feature-title">Automated Schedules &amp; Cron</h3>
+          <p class="feature-desc">
+            Flexible background task automation for periodic world backups, full archives, nightly server restarts, and in-game
+            announcements with full 5-field cron support.
+          </p>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="feature-card">
+          <div class="feature-icon green-glow">🗺️</div>
+          <h3 class="feature-title">Embedded Live Web Map</h3>
+          <p class="feature-desc">
+            View real-time 2D world maps directly in-app with built-in Squaremap integration, full Overworld/Nether/The End
+            world rendering tools, and live player tracking.
+          </p>
+        </div>
+
+        <!-- Feature 8 -->
+        <div class="feature-card">
+          <div class="feature-icon red-glow">🌍</div>
+          <h3 class="feature-title">World Import &amp; Chunk Optimizer</h3>
+          <p class="feature-desc">
+            Import singleplayer <code>.zip</code> or <code>.mcworld</code> saves, reset Nether/End dimensions in 1 tap, and reclaim
+            storage with pure Kotlin Anvil chunk pruning.
+          </p>
+        </div>
+
+        <!-- Feature 9 -->
         <div class="feature-card">
           <div class="feature-icon purple-glow">🧩</div>
           <h3 class="feature-title">Modrinth Plugins &amp; Mods</h3>
@@ -403,37 +453,27 @@
           </p>
         </div>
 
-        <!-- Feature 5 -->
+        <!-- Feature 10 -->
         <div class="feature-card">
-          <div class="feature-icon blue-glow">🌐</div>
-          <h3 class="feature-title">Instant LAN &amp; Port Sharing</h3>
+          <div class="feature-icon cyan-glow">📁</div>
+          <h3 class="feature-title">File Explorer &amp; Code Editor</h3>
           <p class="feature-desc">
-            Automatic local port allocation with persistent IP display cards (<code>&lt;ip&gt;:&lt;port&gt;</code>),
-            1-tap clipboard copying, and GeyserMC cross-play support for Bedrock players.
+            Full server file manager with search and file operations, syntax-highlighted editor with line numbers, and an automated
+            crash log analyzer with 1-tap quick fixes.
           </p>
         </div>
 
-        <!-- Feature 6 -->
+        <!-- Feature 11 -->
         <div class="feature-card">
           <div class="feature-icon green-glow">💾</div>
           <h3 class="feature-title">Snapshot Backups &amp; Export</h3>
           <p class="feature-desc">
             Fast zip backups of world saves or entire server directories with instant 1-tap rollback restoration and
-            direct export to the Android Downloads folder.
+            direct export to Android storage and share sheets.
           </p>
         </div>
 
-        <!-- Feature 7 -->
-        <div class="feature-card">
-          <div class="feature-icon red-glow">⚙️</div>
-          <h3 class="feature-title">Visual &amp; Raw Config Editor</h3>
-          <p class="feature-desc">
-            Intuitive sliders and switches for MOTD, game mode, difficulty, view distance, and PVP, plus an in-app raw
-            text editor for <code>server.properties</code> and YAML configs.
-          </p>
-        </div>
-
-        <!-- Feature 8 -->
+        <!-- Feature 12 -->
         <div class="feature-card">
           <div class="feature-icon amber-glow">🛡️</div>
           <h3 class="feature-title">Background Service &amp; WakeLock</h3>
@@ -619,8 +659,9 @@
               phone's local IP address and port (displayed in the app) in their Minecraft Multiplayer screen.</p>
             <p><strong>Over Mobile Hotspot:</strong> Enable your phone's personal hotspot and have other players connect
               their Wi-Fi to your hotspot to play anywhere on the go.</p>
-            <p><strong>Over the Internet:</strong> You can use free tunneling tools like <strong>Playit.gg</strong> or
-              <strong>ngrok</strong> to expose your server port safely to friends over the public internet.</p>
+            <p><strong>Over the Internet:</strong> Built-in zero-port-forwarding tunneling allows you to share servers over
+              cellular data or Wi-Fi without router setup. Choose from instant free tunnels with <strong>bore.pub</strong>
+              or persistent subdomains with <strong>Playit.gg</strong>, complete with 1-tap QR code sharing and Bedrock deep links.</p>
           </div>
         </details>
 
@@ -657,7 +698,7 @@
             <span class="faq-chevron">+</span>
           </summary>
           <div class="faq-answer">
-            <p>MineServe supports <strong>Android 8.0 (API 26) and higher</strong>. It includes optimized native PRoot
+            <p>MineServe supports <strong>Android 6.0 (API 23) and higher</strong>. It includes optimized native PRoot
               binaries for <strong>ARM64 (aarch64)</strong>, <strong>x86_64</strong>, and <strong>ARMv7
                 (armeabi-v7a)</strong> architectures.</p>
           </div>
