@@ -65,7 +65,7 @@
       <a href="#hero" class="brand" data-umami-event="nav-brand-click">
         <img src="assets/logo.png" alt="MineServe Logo" class="brand-logo" width="36" height="36">
         <span class="brand-name">MineServe</span>
-        <span class="brand-badge">v1.5.0</span>
+        <span class="brand-badge">v1.6.0</span>
       </a>
 
       <nav class="desktop-nav" aria-label="Main Navigation">
@@ -486,10 +486,10 @@
         <!-- Feature 13 -->
         <div class="feature-card">
           <div class="feature-icon cyan-glow">🖥️</div>
-          <h3 class="feature-title">Web Remote Admin Panel</h3>
+          <h3 class="feature-title">Feature-Parity Web Remote Admin</h3>
           <p class="feature-desc">
-            Embedded zero-dependency HTTP server to manage terminal console, edit server files, and monitor live metrics
-            from any desktop browser or tablet over Wi-Fi or public tunnels.
+            Complete standalone web panel to create and delete servers, edit configurations, manage players (Whitelist, Ops, Bans),
+            import modpacks and world saves, view live telemetry charts, and run backups from any browser.
           </p>
         </div>
 
@@ -500,6 +500,26 @@
           <p class="feature-desc">
             Smooth real-time rolling Canvas TPS and MSPT graphs, proactive server lag diagnostics, storage safeguards, and
             1-tap Aikar's optimized G1GC JVM performance presets.
+          </p>
+        </div>
+
+        <!-- Feature 15 -->
+        <div class="feature-card">
+          <div class="feature-icon gold-glow">💬</div>
+          <h3 class="feature-title">Discord Webhook Bridge</h3>
+          <p class="feature-desc">
+            Plugin-free Discord channel webhook broadcasts for server online/stop/crash events, player join and leave notices
+            with 3D skins, and automated backup completion alerts.
+          </p>
+        </div>
+
+        <!-- Feature 16 -->
+        <div class="feature-card">
+          <div class="feature-icon cyan-glow">🔀</div>
+          <h3 class="feature-title">Proxy &amp; Multi-Server Networks</h3>
+          <p class="feature-desc">
+            Run Velocity or BungeeCord proxies alongside backend servers on a single Android device, linking survival, creative,
+            and minigames with internal 127.0.0.1 loopback protection.
           </p>
         </div>
       </div>
@@ -581,6 +601,28 @@
           <p class="engine-desc">Official standalone dedicated server software directly from Mojang Studios for standard
             unmodded survival and creative worlds.</p>
           <div class="engine-meta">Java 8, 17, 21, 25 • Clean Vanilla</div>
+        </div>
+
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-bds">Mojang BDS</span>
+            <span class="engine-license">Beta</span>
+          </div>
+          <h3 class="engine-title">Bedrock Dedicated Server</h3>
+          <p class="engine-desc">Official Mojang pure Minecraft: Bedrock Edition server with native x86_64 execution and
+            automatic user-mode emulation on ARM64.</p>
+          <div class="engine-meta">Native Linux • Port 19132 UDP</div>
+        </div>
+
+        <div class="engine-card">
+          <div class="engine-header">
+            <span class="engine-badge badge-proxy">Network</span>
+            <span class="engine-license">Proxy</span>
+          </div>
+          <h3 class="engine-title">Velocity &amp; BungeeCord</h3>
+          <p class="engine-desc">High-performance Minecraft proxy software enabling multi-server networks with hub routing
+            and internal 127.0.0.1 loopback binding.</p>
+          <div class="engine-meta">Java 21 • Multi-Server Routing</div>
         </div>
       </div>
     </div>
@@ -692,9 +734,9 @@
             <span class="faq-chevron">+</span>
           </summary>
           <div class="faq-answer">
-            <p><strong>Yes!</strong> When creating a server in the wizard, select <strong>"Paper + Geyser
-                (Cross-Play)"</strong>. This automatically sets up GeyserMC and Floodgate translation proxies so Bedrock
-              players can join the Java server seamlessly.</p>
+            <p><strong>Yes!</strong> You have two seamless options for Bedrock support:</p>
+            <p>1. <strong>Paper + Geyser (Cross-Play):</strong> Allows Bedrock players on iOS, Android, and consoles to play together with Java players on the same server.</p>
+            <p>2. <strong>Bedrock Dedicated Server (Beta):</strong> Run Mojang's official standalone Bedrock Dedicated Server natively (port 19132 UDP) with zero Java protocol translation overhead.</p>
           </div>
         </details>
 
@@ -883,7 +925,7 @@
       <img src="assets/logo.png" alt="MineServe Logo" width="26" height="26">
       <div>
         <div class="mobile-sticky-title">MineServe</div>
-        <div class="mobile-sticky-sub">v1.5.0 • Google Play</div>
+        <div class="mobile-sticky-sub">v1.6.0 • Google Play</div>
       </div>
     </div>
     <div class="mobile-sticky-actions">
