@@ -108,11 +108,23 @@
   <main class="container legal-wrap">
     <div class="legal-header">
       <h1>Privacy Policy</h1>
-      <div class="legal-meta">Last Updated: November 17, 2026 · App &amp; Optional MineServe Cloud</div>
+      <div class="legal-meta">Last Updated: November 19, 2026 · App &amp; Optional MineServe Cloud</div>
     </div>
 
     <section class="legal-card">
-      <h2>1. Local-First Principle (MineServe Android App)</h2>
+      <h2>1. Data Controller &amp; Operator Details</h2>
+      <p>
+        <strong>MineServe Cloud</strong> and the <code>mineserve.app</code> web services are owned and operated by <strong>ZEDCEE LTD</strong>, a private limited company registered in England and Wales (Company No. <strong>16425948</strong>), which acts as the Data Controller under UK GDPR and the Data Protection Act 2018.
+      </p>
+      <ul>
+        <li><strong>Company Name:</strong> ZEDCEE LTD</li>
+        <li><strong>Registered Office:</strong> 50 Princes Street, Ipswich, England, IP1 1RJ</li>
+        <li><strong>Contact Email:</strong> <a href="mailto:devwithzachary@pm.me" style="color: var(--emerald-light);">devwithzachary@pm.me</a></li>
+      </ul>
+    </section>
+
+    <section class="legal-card">
+      <h2>2. Local-First Principle (MineServe Android App)</h2>
       <p>
         The <strong>MineServe</strong> Android application (<code>com.devwithzachary.mineserve</code>) is 100% open source (GPL-3.0), ad-free, and built to run locally on your device. If you use MineServe strictly for local hosting without linking an optional MineServe Cloud account:
       </p>
@@ -124,21 +136,22 @@
     </section>
 
     <section class="legal-card">
-      <h2>2. Optional MineServe Cloud Account Data</h2>
+      <h2>3. Optional MineServe Cloud Account Data &amp; Lawful Basis</h2>
       <p>
         If you choose to sign in to <strong>MineServe Cloud</strong> (<code>cloud.mineserve.app</code>) for optional custom relay addresses or off-device cloud backups, we collect only the minimum data required to operate the service:
       </p>
       <ul>
-        <li><strong>Email Address:</strong> Used solely to send one-click passwordless magic sign-in links (via Amazon SES), identify your account, and link your MineServe Android app or Web Portal session.</li>
-        <li><strong>Linked Devices &amp; Session Tokens:</strong> We store hashed/signed authentication tokens and basic device labels (e.g., device model or browser) so you can view and revoke linked sessions at any time from the Cloud Portal.</li>
-        <li><strong>Subscription &amp; Billing Records:</strong> Paid subscriptions (MineServe Plus and MineServe Pro) are processed securely by <strong>Stripe</strong>. We store your Stripe Customer ID, active plan tier, and subscription status. We never receive or store your full credit/debit card numbers.</li>
+        <li><strong>Email Address:</strong> Used solely to send one-click passwordless magic sign-in links (via Amazon SES), identify your account, handle support inquiries, and link your MineServe Android app or Web Portal session.</li>
+        <li><strong>Linked Devices &amp; Session Tokens:</strong> We store signed authentication tokens and basic device labels (e.g., device model or browser) so you can view and revoke linked sessions at any time from the Cloud Portal.</li>
+        <li><strong>Subscription &amp; Billing Records:</strong> Paid subscriptions (MineServe Plus and MineServe Pro) are processed securely by <strong>Stripe</strong> on behalf of <strong>ZEDCEE LTD</strong>. We store your Stripe Customer ID, active plan tier, billing interval, and subscription status. We never receive or store your full credit/debit card numbers.</li>
         <li><strong>Server Address &amp; Tunnel Metadata:</strong> When you claim a custom <code>*.play.mineserve.app</code> or <code>*.playms.uk</code> subdomain, we store the chosen subdomain, target region, and tunnel routing token so our relay servers can forward traffic to your device.</li>
         <li><strong>Cloud Backup Files:</strong> World and server backup archives you upload are stored in <strong>Cloudflare R2</strong> object storage along with file name, size, timestamp, and associated server ID so you can list, download, restore, or delete them.</li>
+        <li><strong>Lawful Basis (UK GDPR):</strong> We process account, relay, and backup data for <em>Performance of a Contract</em> (Article 6(1)(b)), billing/invoicing records for <em>Legal Obligation</em> under UK tax law (Article 6(1)(c)), and security/rate-limiting metadata for <em>Legitimate Interests</em> in preventing abuse and protecting network stability (Article 6(1)(f)).</li>
       </ul>
     </section>
 
     <section class="legal-card">
-      <h2>3. Infrastructure &amp; Subprocessors</h2>
+      <h2>4. Infrastructure, Subprocessors &amp; International Transfers</h2>
       <p>MineServe Cloud relies on the following infrastructure providers to deliver authentication, billing, relays, and storage:</p>
       <ul>
         <li><strong>Amazon Web Services (AWS):</strong> Serverless API, DynamoDB account/backup metadata, and Amazon SES for transactional sign-in emails.</li>
@@ -146,26 +159,32 @@
         <li><strong>Stripe:</strong> Payment processing, invoicing, and subscription management.</li>
         <li><strong>Regional Relay Nodes:</strong> TCP/HTTP relay servers that forward game and Web Admin traffic between players and your Android device without inspecting gameplay contents.</li>
       </ul>
+      <p>Some infrastructure providers (such as AWS in <code>us-east-1</code>, Cloudflare, and Stripe) may process data outside the UK/EEA. Where international transfers occur, they are protected by approved safeguards such as the UK International Data Transfer Addendum, Standard Contractual Clauses (SCCs), or the UK-US Data Bridge.</p>
     </section>
 
     <section class="legal-card">
-      <h2>4. Website Analytics</h2>
+      <h2>5. Website Analytics</h2>
       <p>
         This marketing website (<code>mineserve.app</code>) uses privacy-friendly, cookieless <strong>Umami Analytics</strong> to measure aggregate page views and download button clicks without tracking individuals across sites or storing personal cookies.
       </p>
     </section>
 
     <section class="legal-card">
-      <h2>5. Data Retention, Deletion &amp; Contact</h2>
-      <p>
-        You may delete individual cloud backups, release subdomains, or unlink devices at any time from the Cloud Portal or the MineServe Android app. If you cancel your subscription or wish to delete your MineServe Cloud account and all associated backup data permanently, contact us at <a href="mailto:support@mineserve.app" style="color: var(--emerald-light);">support@mineserve.app</a>.
-      </p>
+      <h2>6. Retention, Your Rights &amp; Contact</h2>
+      <ul>
+        <li><strong>Retention:</strong> You may delete individual cloud backups, release subdomains, or unlink devices at any time from the Cloud Portal or the MineServe Android app. Upon permanent account deletion, account data and backup archives are purged within 30 days. Stripe transaction and tax records are retained for up to 6 years as required by UK tax law (HMRC).</li>
+        <li><strong>Your UK GDPR Rights:</strong> You have the right to access, rectify, erase, restrict, or request portability of your personal data, and to object to processing based on legitimate interests. To exercise your rights or request permanent account deletion, email <a href="mailto:devwithzachary@pm.me" style="color: var(--emerald-light);">devwithzachary@pm.me</a>.</li>
+        <li><strong>Supervisory Authority:</strong> You also have the right to lodge a complaint with the UK Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-light);">ico.org.uk</a>.</li>
+      </ul>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>MineServe (GPL-3.0) · Not affiliated with Mojang or Microsoft.</div>
+      <div>
+        <div>MineServe (GPL-3.0) · Not affiliated with Mojang or Microsoft.</div>
+        <div style="font-size: 0.78rem; margin-top: 4px; opacity: 0.85;">Operated by ZEDCEE LTD (Company No. 16425948) · 50 Princes Street, Ipswich, England, IP1 1RJ · <a href="mailto:devwithzachary@pm.me" style="color: inherit;">devwithzachary@pm.me</a></div>
+      </div>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer">MineServe Cloud</a>
