@@ -1,260 +1,181 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Privacy Policy - MineServe</title>
-  
-  <!-- Primary Meta Tags -->
+
   <meta name="title" content="Privacy Policy - MineServe">
-  <meta name="description" content="Privacy Policy for MineServe (com.devwithzachary.mineserve). Learn how MineServe operates locally with zero personal data collection.">
+  <meta name="description" content="Privacy Policy for the MineServe Android app and optional MineServe Cloud service. Learn what stays strictly on-device and what minimal data is needed for optional Cloud accounts.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#080c14">
+  <meta name="theme-color" content="#070b12">
   <link rel="canonical" href="https://mineserve.app/privacy.html">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Umami Analytics -->
   <script defer src="https://stats.devwithzachary.com/stats" data-website-id="0f927c80-a65d-484a-ac6d-f5de10c83bec"></script>
 
   <style>
-    .legal-wrapper {
-      padding: clamp(2rem, 5vw, 3rem) 0 clamp(3.5rem, 6vw, 6rem);
-      max-width: 820px;
-      margin-inline: auto;
+    .legal-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 0 72px;
     }
     .legal-header {
-      margin-bottom: 2rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border-card);
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
     }
-    .legal-title {
-      font-family: var(--font-heading);
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 0.5rem;
-      line-height: 1.15;
+    .legal-header h1 {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin: 0 0 8px;
     }
     .legal-meta {
-      font-family: var(--font-mono);
-      font-size: clamp(0.78rem, 2vw, 0.85rem);
-      color: var(--emerald-light);
-      line-height: 1.4;
-    }
-    .legal-section {
-      margin-bottom: 2.25rem;
-    }
-    .legal-section h2 {
-      font-family: var(--font-heading);
-      font-size: clamp(1.2rem, 3vw, 1.45rem);
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.85rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .legal-section h2::before {
-      content: "";
-      display: inline-block;
-      width: 4px;
-      height: 1.2rem;
-      background: var(--emerald-primary);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-    .legal-section p {
-      color: var(--slate-300);
-      font-size: clamp(0.92rem, 2vw, 1rem);
-      line-height: 1.7;
-      margin-bottom: 1rem;
-    }
-    .legal-section ul {
-      color: var(--slate-300);
-      padding-left: 1.25rem;
-      margin-bottom: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      font-size: clamp(0.9rem, 2vw, 0.98rem);
-    }
-    .legal-section li {
-      line-height: 1.6;
-    }
-    .legal-section strong {
-      color: #fff;
-    }
-    .legal-section code {
-      font-family: var(--font-mono);
+      font-family: "JetBrains Mono", monospace;
       font-size: 0.82rem;
-      background: rgba(255, 255, 255, 0.08);
-      padding: 0.15rem 0.4rem;
-      border-radius: 4px;
       color: var(--emerald-light);
-      word-break: break-all;
     }
     .legal-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: var(--radius-lg);
-      padding: clamp(1.15rem, 3.5vw, 1.5rem);
-      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    .legal-card h2 {
+      font-family: "Outfit", sans-serif;
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      color: var(--text-primary);
+    }
+    .legal-card p,
+    .legal-card li {
+      color: var(--text-secondary);
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+    .legal-card ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .legal-card code {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.84rem;
+      background: rgba(148, 163, 184, 0.12);
+      padding: 2px 6px;
+      border-radius: 6px;
+      color: var(--emerald-light);
+    }
+    .legal-card strong {
+      color: var(--text-primary);
     }
   </style>
 </head>
-<body class="bg-obsidian text-slate-100 antialiased selection:bg-emerald-500 selection:text-black">
 
-  <!-- Ambient Glow -->
-  <div class="ambient-glow glow-top-left" aria-hidden="true"></div>
-  <div class="ambient-glow glow-top-right" aria-hidden="true"></div>
-
-  <!-- Header -->
-  <header class="sticky-nav">
-    <div class="nav-container">
-      <a href="index.html" class="brand" data-umami-event="privacy-brand-click">
-        <img src="assets/logo.png" alt="MineServe Logo" class="brand-logo" width="36" height="36">
-        <span class="brand-name">MineServe</span>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner" id="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.png" alt="MineServe Logo">
+        <span>MineServe</span>
+        <span class="version-pill">v1.7.0</span>
       </a>
-
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#cloud">MineServe Cloud</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
       <div class="nav-actions">
-        <a href="index.html" class="btn btn-secondary" data-umami-event="privacy-back-home">
-          <span>← Back to Home</span>
-        </a>
+        <a href="index.html" class="btn btn-secondary btn-sm">Back to Home</a>
       </div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <!-- Legal Main Content -->
-  <main class="container">
-    <div class="legal-wrapper">
-      <div class="legal-header">
-        <h1 class="legal-title">Privacy Policy</h1>
-        <div class="legal-meta">Effective Date: August 26, 2026 • Application ID: com.devwithzachary.mineserve</div>
-      </div>
-
-      <div class="legal-card">
-        <p style="margin-bottom: 0;">
-          <strong>Summary:</strong> MineServe is a free and open-source software project. We believe privacy is a fundamental human right. <strong>MineServe does not collect, store, transmit, track, or sell any personal data or usage analytics.</strong> Everything runs 100% locally in your device's private sandbox.
-        </p>
-      </div>
-
-      <div class="legal-section">
-        <h2>1. Zero Personal Data Collection</h2>
-        <p>
-          MineServe (<code>com.devwithzachary.mineserve</code>) does not collect any personally identifiable information (PII). Specifically:
-        </p>
-        <ul>
-          <li>We do <strong>not</strong> collect names, email addresses, phone numbers, or account credentials.</li>
-          <li>We do <strong>not</strong> collect advertising identifiers (GAID / IDFA) or track you across apps.</li>
-          <li>We do <strong>not</strong> include any third-party advertising SDKs or commercial monetization trackers.</li>
-          <li>We do <strong>not</strong> upload your server worlds, configuration files, chat logs, or terminal command history to any remote server.</li>
-        </ul>
-      </div>
-
-      <div class="legal-section">
-        <h2>2. Android Permissions &amp; How They Are Used</h2>
-        <p>
-          MineServe requests standard Android system permissions strictly for the operational functionality of hosting a local Minecraft server:
-        </p>
-        <ul>
-          <li>
-            <strong><code>android.permission.INTERNET</code>:</strong>
-            Required to download official server software binaries directly from upstream repositories (Mojang, PaperMC, Purpur, Fabric, NeoForge), fetch plugin/mod metadata from the Modrinth API, and install official OpenJDK packages from Ubuntu APT package mirrors. Also used for local network socket listening (e.g. port 25565) to accept incoming Minecraft multiplayer connections.
-          </li>
-          <li>
-            <strong><code>android.permission.POST_NOTIFICATIONS</code>:</strong>
-            Required on Android 13+ to display the active server status notification shade card. This informs you when servers are online, shows active RAM utilization, and provides an immediate 1-tap button to stop servers safely.
-          </li>
-          <li>
-            <strong><code>android.permission.FOREGROUND_SERVICE</code> &amp; <code>android.permission.WAKE_LOCK</code>:</strong>
-            Required to run server instances continuously in the background without Android Doze or aggressive memory management killing the Java process when switching apps or locking your screen.
-          </li>
-        </ul>
-      </div>
-
-      <div class="legal-section">
-        <h2>3. Third-Party APIs &amp; Upstream Downloads</h2>
-        <p>
-          When you use MineServe to create servers or install plugins/mods, your device communicates directly and securely over HTTPS with official third-party APIs:
-        </p>
-        <ul>
-          <li><strong>PaperMC API:</strong> <code>api.papermc.io</code> (Paper, Purpur, Folia versioning and build downloads)</li>
-          <li><strong>Mojang Version Manifest:</strong> <code>piston-meta.mojang.com</code> (Official Vanilla server JARs)</li>
-          <li><strong>Fabric Meta API:</strong> <code>meta.fabricmc.net</code> (Fabric loader versions and server installers)</li>
-          <li><strong>NeoForged API:</strong> <code>maven.neoforged.net</code> (NeoForge release builds)</li>
-          <li><strong>Modrinth API:</strong> <code>api.modrinth.com</code> (Plugin and mod search, project details, and downloads)</li>
-          <li><strong>Ubuntu Archive &amp; Ports:</strong> <code>ports.ubuntu.com</code> / <code>archive.ubuntu.com</code> (OpenJDK 8, 17, 21, 25 APT packages)</li>
-        </ul>
-        <p>
-          These requests are made directly from your device to the respective provider. MineServe does not route your traffic through any intermediary proxy servers.
-        </p>
-      </div>
-
-      <div class="legal-section">
-        <h2>4. Local Storage &amp; Data Ownership</h2>
-        <p>
-          All Minecraft server files, configuration properties, player data, world saves, backups, and terminal logs reside locally within the app's sandboxed storage directory on your Android device (<code>/data/data/com.devwithzachary.mineserve/files/</code>).
-        </p>
-        <p>
-          You retain 100% ownership of all worlds and files. You can export snapshot zip archives of your worlds to your device's <code>Downloads/</code> folder at any time. When you uninstall MineServe, all internal server data and runtime containers are completely removed by Android.
-        </p>
-      </div>
-
-      <div class="legal-section">
-        <h2>5. Open Source Transparency</h2>
-        <p>
-          MineServe is licensed under the <strong>GNU General Public License v3.0 (GPL-3.0)</strong>. The entire source code is public and open for community audit, verification, and inspection on <a href="https://github.com/devwithzachary/MineServe" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-light); text-decoration: underline;" data-umami-event="privacy-github-link">GitHub</a>.
-        </p>
-      </div>
-
-      <div class="legal-section">
-        <h2>6. Changes to this Privacy Policy</h2>
-        <p>
-          If any changes are made to this Privacy Policy, the updated version will be posted here on <a href="https://mineserve.app/privacy.html" style="color: var(--emerald-light);">mineserve.app/privacy.html</a> with an updated effective date.
-        </p>
-      </div>
-
-      <div class="legal-section">
-        <h2>7. Contact Information</h2>
-        <p>
-          If you have questions, feedback, or concerns regarding this Privacy Policy, please reach out to us:
-        </p>
-        <ul>
-          <li><strong>GitHub Issues:</strong> <a href="https://github.com/devwithzachary/MineServe/issues" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-light);" data-umami-event="privacy-issues-link">github.com/devwithzachary/MineServe/issues</a></li>
-          <li><strong>Discord Community:</strong> <a href="https://discord.gg/QdT9yCrKmV" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-light);" data-umami-event="privacy-discord-link">discord.gg/QdT9yCrKmV</a></li>
-          <li><strong>Website:</strong> <a href="https://mineserve.app" style="color: var(--emerald-light);">mineserve.app</a></li>
-        </ul>
-      </div>
+  <main class="container legal-wrap">
+    <div class="legal-header">
+      <h1>Privacy Policy</h1>
+      <div class="legal-meta">Last Updated: November 17, 2026 · App &amp; Optional MineServe Cloud</div>
     </div>
+
+    <section class="legal-card">
+      <h2>1. Local-First Principle (MineServe Android App)</h2>
+      <p>
+        The <strong>MineServe</strong> Android application (<code>com.devwithzachary.mineserve</code>) is 100% open source (GPL-3.0), ad-free, and built to run locally on your device. If you use MineServe strictly for local hosting without linking an optional MineServe Cloud account:
+      </p>
+      <ul>
+        <li><strong>No account or telemetry required:</strong> We do not collect personal information, usage analytics, crash telemetry, or advertising IDs inside the Android app.</li>
+        <li><strong>On-device storage:</strong> World saves, plugins, server configs, and local logs remain exclusively inside your device's private app storage unless you choose to export them.</li>
+        <li><strong>Third-party services you choose:</strong> When you download server software (Mojang, PaperMC, Purpur, Fabric, Forge, NeoForge, Modrinth), use third-party tunnels (Bore, Playit.gg), sync to your own WebDAV/Nextcloud server, or send Discord webhooks, your device communicates directly with those services under their respective privacy policies.</li>
+      </ul>
+    </section>
+
+    <section class="legal-card">
+      <h2>2. Optional MineServe Cloud Account Data</h2>
+      <p>
+        If you choose to sign in to <strong>MineServe Cloud</strong> (<code>cloud.mineserve.app</code>) for optional custom relay addresses or off-device cloud backups, we collect only the minimum data required to operate the service:
+      </p>
+      <ul>
+        <li><strong>Email Address:</strong> Used solely to send one-click passwordless magic sign-in links (via Amazon SES), identify your account, and link your MineServe Android app or Web Portal session.</li>
+        <li><strong>Linked Devices &amp; Session Tokens:</strong> We store hashed/signed authentication tokens and basic device labels (e.g., device model or browser) so you can view and revoke linked sessions at any time from the Cloud Portal.</li>
+        <li><strong>Subscription &amp; Billing Records:</strong> Paid subscriptions (MineServe Plus and MineServe Pro) are processed securely by <strong>Stripe</strong>. We store your Stripe Customer ID, active plan tier, and subscription status. We never receive or store your full credit/debit card numbers.</li>
+        <li><strong>Server Address &amp; Tunnel Metadata:</strong> When you claim a custom <code>*.play.mineserve.app</code> or <code>*.playms.uk</code> subdomain, we store the chosen subdomain, target region, and tunnel routing token so our relay servers can forward traffic to your device.</li>
+        <li><strong>Cloud Backup Files:</strong> World and server backup archives you upload are stored in <strong>Cloudflare R2</strong> object storage along with file name, size, timestamp, and associated server ID so you can list, download, restore, or delete them.</li>
+      </ul>
+    </section>
+
+    <section class="legal-card">
+      <h2>3. Infrastructure &amp; Subprocessors</h2>
+      <p>MineServe Cloud relies on the following infrastructure providers to deliver authentication, billing, relays, and storage:</p>
+      <ul>
+        <li><strong>Amazon Web Services (AWS):</strong> Serverless API, DynamoDB account/backup metadata, and Amazon SES for transactional sign-in emails.</li>
+        <li><strong>Cloudflare (R2 &amp; DNS/Pages):</strong> Object storage for uploaded backup archives and DNS/portal hosting.</li>
+        <li><strong>Stripe:</strong> Payment processing, invoicing, and subscription management.</li>
+        <li><strong>Regional Relay Nodes:</strong> TCP/HTTP relay servers that forward game and Web Admin traffic between players and your Android device without inspecting gameplay contents.</li>
+      </ul>
+    </section>
+
+    <section class="legal-card">
+      <h2>4. Website Analytics</h2>
+      <p>
+        This marketing website (<code>mineserve.app</code>) uses privacy-friendly, cookieless <strong>Umami Analytics</strong> to measure aggregate page views and download button clicks without tracking individuals across sites or storing personal cookies.
+      </p>
+    </section>
+
+    <section class="legal-card">
+      <h2>5. Data Retention, Deletion &amp; Contact</h2>
+      <p>
+        You may delete individual cloud backups, release subdomains, or unlink devices at any time from the Cloud Portal or the MineServe Android app. If you cancel your subscription or wish to delete your MineServe Cloud account and all associated backup data permanently, contact us at <a href="mailto:support@mineserve.app" style="color: var(--emerald-light);">support@mineserve.app</a>.
+      </p>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-bottom">
-        <p class="footer-disclaimer">
-          <strong>Disclaimer:</strong> MineServe is an independent open-source project and is NOT an official Minecraft product. Not approved by or associated with Mojang or Microsoft.
-        </p>
-        <div class="footer-copy">
-          <span>&copy; 2026 MineServe. Licensed under GPL-3.0.</span>
-          <span>•</span>
-          <a href="index.html" class="footer-domain-link" data-umami-event="privacy-footer-home">Home</a>
-          <span>•</span>
-          <a href="privacy.html" class="footer-domain-link" data-umami-event="privacy-footer-self">Privacy Policy</a>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>MineServe (GPL-3.0) · Not affiliated with Mojang or Microsoft.</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer">MineServe Cloud</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>
