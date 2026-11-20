@@ -210,7 +210,8 @@
         <div class="section-header">
           <span class="section-tag">Optional Add-On Service</span>
           <h2>MineServe Cloud: Custom Addresses &amp; Encrypted R2 Backups</h2>
-          <p>The MineServe app is 100% free and open source forever. Upgrade only if you want dedicated low-latency relay subdomains and off-device Cloudflare R2 cloud backups.</p>
+          <p>Your Android phone hosts your Minecraft server 100% free forever. MineServe Cloud is an optional add-on (not 24/7 cloud hosting) that gives your phone-hosted server a custom <code>*.play.mineserve.app</code> address, remote browser Web Admin from anywhere, and encrypted off-device backups. Try Plus free for 7 days.</p>
+          <p id="web-currency-note" style="display: none; font-size: 0.82rem; color: var(--text-muted); margin-top: 6px;"></p>
         </div>
 
         <div class="grid-3">
@@ -218,7 +219,7 @@
             <div>
               <h3>Free Forever</h3>
               <div class="price-row">
-                <span class="price-amount">£0</span>
+                <span class="price-amount" id="web-price-free">£0</span>
                 <span class="price-period">/ month</span>
               </div>
               <p style="color: var(--emerald-light); font-size: 0.82rem; font-weight: 600; margin: 0 0 12px;">Local device hosting</p>
@@ -235,12 +236,12 @@
 
           <div class="pricing-card featured">
             <div>
-              <h3>MineServe Plus <span class="badge-new">POPULAR</span></h3>
+              <h3>MineServe Plus <span class="badge-new">7-DAY FREE TRIAL</span></h3>
               <div class="price-row">
-                <span class="price-amount">£2.99</span>
+                <span class="price-amount" id="web-price-plus">£2.99</span>
                 <span class="price-period">/ month</span>
               </div>
-              <p style="color: var(--emerald-light); font-size: 0.82rem; font-weight: 600; margin: 0 0 12px;">Everything in Free, plus:</p>
+              <p style="color: var(--emerald-light); font-size: 0.82rem; font-weight: 600; margin: 0 0 12px;">7 days free for new subscribers, then cancel anytime:</p>
               <ul class="feature-list">
                 <li>1 custom <code>*.play.mineserve.app</code> address</li>
                 <li>Access Web Admin &amp; Live Map from anywhere</li>
@@ -248,14 +249,14 @@
                 <li>Multi-region low-latency game relays</li>
               </ul>
             </div>
-            <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-umami-event="cloud-plus-click">Upgrade to Plus</a>
+            <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-umami-event="cloud-plus-click">Start 7-Day Free Trial</a>
           </div>
 
           <div class="pricing-card">
             <div>
               <h3>MineServe Pro</h3>
               <div class="price-row">
-                <span class="price-amount">£6.99</span>
+                <span class="price-amount" id="web-price-pro">£6.99</span>
                 <span class="price-period">/ month</span>
               </div>
               <p style="color: var(--emerald-light); font-size: 0.82rem; font-weight: 600; margin: 0 0 12px;">Everything in Plus, plus:</p>
