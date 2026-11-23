@@ -1,4 +1,4 @@
-/* MineServe Static Website Stylesheet (v1.7.0) */
+/* MineServe Static Website Stylesheet (v1.8.0) */
 :root {
   --bg-obsidian: #070b12;
   --bg-surface: #0d1422;
@@ -589,6 +589,94 @@ img {
   display: block;
 }
 
+/* Linux Install Section */
+.linux-install-card {
+  background: linear-gradient(145deg, rgba(16, 185, 129, 0.1), rgba(15, 23, 38, 0.92));
+  border: 1px solid var(--border-emerald);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow-glow);
+  margin-bottom: 24px;
+}
+
+.cmd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cmd-box {
+  background: #05080f;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.cmd-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--emerald-light);
+}
+
+.cmd-code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.copy-cmd-btn {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--border-emerald);
+  color: var(--emerald-light);
+  border-radius: 7px;
+  padding: 4px 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.copy-cmd-btn:hover {
+  background: rgba(16, 185, 129, 0.28);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.18);
+  border: 1px solid var(--border-emerald);
+  color: var(--emerald-light);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
@@ -622,7 +710,9 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .grid-3 {
+  .grid-3,
+  .cmd-grid,
+  .steps-grid {
     grid-template-columns: 1fr;
   }
 

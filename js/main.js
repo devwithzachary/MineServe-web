@@ -43,6 +43,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Copy command buttons for Linux 1-line installer snippets
+  document.querySelectorAll(".copy-cmd-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cmd = btn.getAttribute("data-copy");
+      if (!cmd) return;
+      navigator.clipboard.writeText(cmd).then(() => {
+        const prev = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(() => {
+          btn.textContent = prev;
+        }, 1800);
+      });
+    });
+  });
+
   // Localized pricing display (matching Stripe Adaptive Pricing estimates)
   const pricingTable = {
     GBP: { code: "GBP", free: "£0", plus: "£2.99", pro: "£6.99" },
