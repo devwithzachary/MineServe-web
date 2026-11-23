@@ -92,8 +92,7 @@ if [ "$MODE_UNINSTALL" -eq 1 ]; then
                               /usr/share/applications/mineserve.desktop \
                               /usr/share/icons/hicolor/256x256/apps/mineserve.png \
                               /lib/systemd/system/mineserve.service \
-                              /usr/lib/systemd/system/mineserve.service \
-                              /etc/systemd/system/mineserve.service
+                              /usr/lib/systemd/system/mineserve.service
     fi
     echo "MineServe uninstalled."
     exit 0
