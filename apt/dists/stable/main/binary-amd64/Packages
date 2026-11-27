@@ -1,0 +1,19 @@
+Package: mineserve
+Version: 1.9.0
+Architecture: amd64
+Maintainer: Zachary <https://github.com/devwithzachary/MineServe>
+Installed-Size: 192716
+Recommends: python3-dbus, python3-gi, xdg-utils
+Filename: pool/main/m/mineserve/MineServe-1.9.0-linux-amd64.deb
+Size: 94186096
+MD5sum: 3c0265849d3f5ff30967aa778792b135
+SHA1: 5dfc1020526e7b755e0af441a17d9d131db69e67
+SHA256: ea16f22436f49a063a241bf289bb799923439ca0792a0db9f98f17cb00fb86d7
+Section: games
+Priority: optional
+Homepage: https://mineserve.app
+Description: Native Linux Minecraft Java, Modded, Proxy, and Bedrock Server Manager
+ MineServe is a free and open-source Minecraft server manager for Linux and Android.
+ Includes an adaptive multi-pane Desktop GUI with Linux System Tray integration
+ and a --headless Web Remote Admin daemon mode with portable OpenJDK 8/17/21/25 provisioning.
+

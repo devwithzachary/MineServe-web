@@ -1,0 +1,7 @@
+[mineserve]
+name=MineServe Official Repository
+baseurl=https://mineserve.app/rpm/
+enabled=1
+repo_gpgcheck=1
+gpgcheck=0
+gpgkey=https://mineserve.app/rpm/RPM-GPG-KEY-mineserve

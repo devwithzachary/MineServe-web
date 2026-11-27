@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: amd64
+Codename: stable
+Components: main
+Date: Fri, 27 Nov 2026 14:13:20 +0000
+Label: MineServe
+Origin: MineServe
+Suite: stable
+MD5Sum:
+ 3bc6a065d2fdd48477b02d30b30963d7              142 Release
+ 0ea68ec329ea1bf04325d095f65a7502              841 main/binary-amd64/Packages
+ ef8b2d03e903f1e2fcfbdad53f822443              587 main/binary-amd64/Packages.gz
+SHA1:
+ 6a96ec041060f3fe6506a7c29714f15f4608c67a              142 Release
+ 35cbf96c66efcd5f1e9cbe37f9082319536aaf18              841 main/binary-amd64/Packages
+ f1c52b340441e943cb613853983935ab5fc7a5ae              587 main/binary-amd64/Packages.gz
+SHA256:
+ 8a505c5b8bca1505f1e43eedb24e35c8c61309a6af6622757ac91f1d400c7cd4              142 Release
+ 8295c82abd948b43797c4ea65ed96d3f8dbedeea4014f91914fefdfb2cf5e0bf              841 main/binary-amd64/Packages
+ 016d6abb395954cb4a474a520c1c21f0e065c6b55192428997eebb8135408364              587 main/binary-amd64/Packages.gz
+SHA512:
+ cdba5d6e42fc0dc467e155bae0229d3362304519c9ffb6e4bec1ef28e5524680bd1a719f9c6cf55837eb51f6a0cfcdbb521bcdd6263a15ad5023444cee81019f              142 Release
+ 4ad26fe252df564c8faf7117db276b49ad0d0c4190e10bf7327e36eeb51a3d224c349871d297610fbe48b61cd65c50fb44e015e8f4ffa9c76331be237ba60748              841 main/binary-amd64/Packages
+ 5caefa6d057a9a61b02b666e46045b28fb9fa7f511bd777393c814990dec65905ba4fc26428a9c0194f8fda905e3cbcd7776beb1e612f62b21548a675e190c22              587 main/binary-amd64/Packages.gz
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEG2EU6BcSp6ISL9KqV3b0XY4LOvEFAmsJkAAACgkQV3b0XY4L
+OvGuHA//d8ndnidmXD99e2FX1PnLICsfDb4Q0Wk2+aMmDQ10+BLBBz3pABr2kSqY
+7iXYWLgz4hLoKosa7CqxCh7r+V2t4W85R0s+zVXmRlAl+j1/FvGk/8T8DM9KFmpC
+W8e3VF/G6nHNL3UlpeY1HTuD9mWpFIn8cKGK03KMyI8aM5zQmbpzoQwMzzJuF8aU
+72r+IFlT6bnyuLb5l+nKo1by0uaqiL/VV3IldLa0wdUu39fFcLbO+OgnU4+AADot
+cuPrVjbcINuaIvbdUz1KkeAGHKxAixB1znekBdu4U7IK7Ibyn5oYheDJ9h9m90N5
+hA21YffFhVFhz3FaXgBKze+cJiQ9x6dL49IgbgnGoYPMgV0MzIsSyCx0dINXHEFS
+uVetX+N3VM4xdy2DOpY2GDbp/krp7yCWhvLvNW1ObX5IoRwYoDidwz3dXDTowYLF
+wSW+asjTeTR5NX9jWxsHpZRO/6J0597KibztY/hhMA5MTRoSOZmuny9YUx0bBqWp
+ZbU4cYcBZVu8vWcUkglhBpsSp6bge/lERsdFmKjcPOUE5toYeraQihzF3KUI1KrQ
+hS/BD/CER/p8+SVGIIW+wU8KiakCepBqzO8iHa1MFJqaYTql8mXEEicDynCRkTph
+4qf9tppdRmuYjwFR75cG8fxXE7909yGXCyh2ixnI6+SAW7Uu31k=
+=KRjU
+-----END PGP SIGNATURE-----
