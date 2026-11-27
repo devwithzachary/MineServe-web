@@ -1,0 +1,229 @@
+/* ==========================================================================
+   MineServe Material Design 3 Tokens ("Obsidian & Ore")
+   Single canonical hex token file for mineserve.app.
+   Zero raw hex literals allowed outside this file.
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Surface Ladder */
+  --md-sys-color-surface-container-lowest: #070A12;
+  --md-sys-color-surface: #0B0F19;
+  --md-sys-color-background: #0B0F19;
+  --md-sys-color-surface-container-low: #0F172A;
+  --md-sys-color-surface-container: #1B2333;
+  --md-sys-color-surface-container-high: #242F44;
+  --md-sys-color-surface-container-highest: #2E3B54;
+  --md-sys-color-on-surface: #E2E8F0;
+  --md-sys-color-on-surface-variant: #94A3B8;
+  --md-sys-color-outline: #64748B;
+  --md-sys-color-outline-variant: #334155;
+  --md-sys-color-outline-variant-divider: rgba(51, 65, 85, 0.4);
+
+  /* Emerald Primary */
+  --md-sys-color-primary: #34D399;
+  --md-sys-color-on-primary: #003824;
+  --md-sys-color-primary-container: #064E3B;
+  --md-sys-color-on-primary-container: #A7F3D0;
+  --ms-color-brand-seed: #10B981;
+
+  /* Slate Secondary */
+  --md-sys-color-secondary: #94A3B8;
+  --md-sys-color-on-secondary: #0F172A;
+  --md-sys-color-secondary-container: #1E293B;
+  --md-sys-color-on-secondary-container: #E2E8F0;
+
+  /* Diamond Tertiary */
+  --md-sys-color-tertiary: #22D3EE;
+  --md-sys-color-on-tertiary: #003640;
+  --md-sys-color-tertiary-container: #0E4F5C;
+  --md-sys-color-on-tertiary-container: #CFFAFE;
+
+  /* Gold Warning */
+  --md-sys-color-warning: #FBBF24;
+  --md-sys-color-on-warning: #3D2600;
+  --md-sys-color-warning-container: #452706;
+  --md-sys-color-on-warning-container: #FDE68A;
+
+  /* Redstone Error */
+  --md-sys-color-error: #F87171;
+  --md-sys-color-on-error: #450A0A;
+  --md-sys-color-error-container: #5C1111;
+  --md-sys-color-on-error-container: #FECACA;
+
+  /* Console Viewport (Always Dark Obsidian for ANSI log legibility) */
+  --ms-console-bg: #070A12;
+  --ms-console-fg: #E2E8F0;
+  --ms-console-dim: #64748B;
+  --ms-console-ok: #34D399;
+  --ms-console-cyan: #22D3EE;
+  --ms-console-warn: #FBBF24;
+  --ms-console-err: #F87171;
+
+  /* Typography */
+  --md-sys-typescale-font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --md-sys-typescale-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Shape Scale */
+  --md-sys-shape-extra-small: 4px;
+  --md-sys-shape-small: 8px;
+  --md-sys-shape-medium: 12px;
+  --md-sys-shape-large: 16px;
+  --md-sys-shape-extra-large: 28px;
+  --md-sys-shape-full: 999px;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Slate-Tinted Light Mode */
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface: #F8FAFC;
+  --md-sys-color-background: #F8FAFC;
+  --md-sys-color-surface-container-low: #F1F5F9;
+  --md-sys-color-surface-container: #E2E8F0;
+  --md-sys-color-surface-container-high: #DAE3EE;
+  --md-sys-color-surface-container-highest: #CBD5E1;
+  --md-sys-color-on-surface: #0F172A;
+  --md-sys-color-on-surface-variant: #475569;
+  --md-sys-color-outline: #64748B;
+  --md-sys-color-outline-variant: #CBD5E1;
+  --md-sys-color-outline-variant-divider: rgba(203, 213, 225, 0.75);
+
+  /* Emerald Primary */
+  --md-sys-color-primary: #059669;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #D1FAE5;
+  --md-sys-color-on-primary-container: #064E3B;
+  --ms-color-brand-seed: #10B981;
+
+  /* Slate Secondary */
+  --md-sys-color-secondary: #475569;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #E2E8F0;
+  --md-sys-color-on-secondary-container: #0F172A;
+
+  /* Diamond Tertiary */
+  --md-sys-color-tertiary: #0891B2;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #CFFAFE;
+  --md-sys-color-on-tertiary-container: #0E4F5C;
+
+  /* Gold Warning */
+  --md-sys-color-warning: #D97706;
+  --md-sys-color-on-warning: #FFFFFF;
+  --md-sys-color-warning-container: #FEF3C7;
+  --md-sys-color-on-warning-container: #452706;
+
+  /* Redstone Error */
+  --md-sys-color-error: #DC2626;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #FEE2E2;
+  --md-sys-color-on-error-container: #5C1111;
+
+  /* Console Viewport remains dark #070A12 */
+  --ms-console-bg: #070A12;
+  --ms-console-fg: #E2E8F0;
+  --ms-console-dim: #64748B;
+  --ms-console-ok: #34D399;
+  --ms-console-cyan: #22D3EE;
+  --ms-console-warn: #FBBF24;
+  --ms-console-err: #F87171;
+}
+
+/* ==========================================================================
+   Reusable Material Design 3 Component Primitives
+   ========================================================================== */
+
+.m3-card {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  border: none;
+  border-radius: var(--md-sys-shape-large);
+  padding: 22px;
+}
+
+.m3-table {
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
+  border: none;
+  border-radius: var(--md-sys-shape-large);
+  overflow: hidden;
+}
+
+.m3-segmented-row {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-full);
+  overflow: hidden;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.m3-segmented-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: none;
+  border-right: 1px solid var(--md-sys-color-outline-variant);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: var(--md-sys-typescale-font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.m3-segmented-btn:last-child {
+  border-right: none;
+}
+
+.m3-segmented-btn:hover {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+.m3-segmented-btn.active {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.m3-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border: none;
+  border-radius: var(--md-sys-shape-small);
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--md-sys-typescale-font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.ms-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.ms-icon--sm {
+  width: 17px;
+  height: 17px;
+}
+
+.ms-icon--lg {
+  width: 24px;
+  height: 24px;
+}

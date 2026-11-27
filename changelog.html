@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog - MineServe</title>
+  <meta name="description" content="Release history for MineServe across Android, Desktop, and Headless WebUI.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/mineserve-m3-tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://stats.devwithzachary.com/stats"
+    data-website-id="0f927c80-a65d-484a-ac6d-f5de10c83bec"
+    data-domains="mineserve.app"></script>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("mineserve_web_theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (_) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <header id="site-header" class="site-header">
+    <div class="container nav-inner" id="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.svg" data-fallback-src="assets/logo.png" alt="MineServe Logo" width="34" height="34">
+        <span>MineServe</span>
+        <span class="version-pill">v1.9.0</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html#features">Features</a>
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Switch to light mode" title="Toggle Light / Dark theme">
+          <svg id="theme-icon-sun" class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17q-2.075 0-3.537-1.463T7 12t1.463-3.537T12 7t3.538 1.463T17 12t-1.463 3.538T12 17m-7-4H1v-2h4zm18 0h-4v-2h4zM11 5V1h2v4zm0 18v-4h2v4zM6.4 7.75L3.875 5.325L5.3 3.85l2.4 2.5zm12.3 12.4l-2.425-2.525L17.6 16.25l2.525 2.425zM16.25 6.4l2.425-2.525L20.15 5.3l-2.5 2.4zM3.85 18.7l2.525-2.425L7.75 17.6l-2.425 2.525z"/></svg>
+          <svg id="theme-icon-moon" class="ms-icon hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21q-3.75 0-6.375-2.625T3 12t2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21"/></svg>
+        </button>
+        <a href="index.html#download" class="btn btn-tonal btn-sm">Download</a>
+      </div>
+      <button class="icon-btn mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation" aria-expanded="false">
+        <svg class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="doc-shell">
+      <article class="doc-article">
+        <div class="doc-header">
+          <h1>Release Changelog</h1>
+          <div class="doc-meta">Synced with MineServer-App · GPL-3.0</div>
+        </div>
+
+        <section id="v1-9-0" class="doc-section">
+          <h2>v1.9.0 (2026-11-27)</h2>
+          <h3>What's New</h3>
+          <ul>
+            <li>Added beta builds for macOS (Apple Silicon and Intel) and Windows (x64) with both the desktop app and headless mode, available as native installers or portable archives.</li>
+            <li>Added scheduled tasks on desktop for automatic backups, restarts, broadcasts, and custom commands.</li>
+            <li>Added idle sleep and auto-wake on ping on desktop so empty servers shut down automatically and wake up when a player joins.</li>
+            <li>Added automatic tunnels, router port forwarding, Discord webhook notifications, and MineServe Cloud web panel relays on desktop.</li>
+            <li>Added chunk pre-generation, automatic GeyserMC setup for Bedrock cross-play, and a crash log analyzer with one-click fixes on desktop.</li>
+            <li>Added WebDAV backup sync and a built-in Velocity and BungeeCord proxy route editor on desktop.</li>
+            <li>Added an optional Material You dynamic color toggle on Android 12 and newer.</li>
+            <li>Added per-server access controls when creating panel users on desktop, plus CSV export for the audit log on Android and desktop.</li>
+            <li>Added settings to choose custom folders for server data and Java runtimes on desktop and the web panel.</li>
+          </ul>
+          <h3>What's Changed</h3>
+          <ul>
+            <li>Redesigned the Android app, desktop app, and web admin panel with a unified Material Design 3 look, updated fonts, and both dark and light themes.</li>
+            <li>Organized server management across every platform into six consistent tabs: Console, Performance, Players, Content, World &amp; Map, and Management.</li>
+            <li>Simplified server creation across Android, desktop, and the web panel into a single two-step flow.</li>
+            <li>Updated the web admin panel to bundle its fonts locally for offline LAN use, replace browser popups with built-in dialogs, and match the desktop app's settings layout.</li>
+          </ul>
+        </section>
+
+        <section id="v1-8-1" class="doc-section">
+          <h2>v1.8.1 (2026-11-24)</h2>
+          <ul>
+            <li>Hardened Linux packaging (<span class="mono">.deb</span>, <span class="mono">.rpm</span>, <span class="mono">PKGBUILD</span>, <span class="mono">install.sh</span>, Docker) with <span class="mono">0755</span> permissions, <span class="mono">sysusers</span>, and systemd service units.</li>
+            <li>Improved Desktop GUI system tray readiness, async server data refreshes, Live Map tile stability, and clean process shutdown hooks.</li>
+            <li>Hardened path traversal checks, per-username login rate limiting, SSE permission re-validation, and Play Store build compliance.</li>
+          </ul>
+        </section>
+
+        <section id="v1-8-0" class="doc-section">
+          <h2>v1.8.0 (2026-11-23)</h2>
+          <ul>
+            <li><strong>Native Linux Desktop GUI &amp; Headless Engine:</strong> Zero-PRoot <span class="mono">ProcessBuilder</span> execution, <span class="mono">/proc</span> telemetry, Crash Watchdog, and portable Adoptium OpenJDK 8/17/21/25 management.</li>
+            <li><strong>Multi-User RBAC &amp; Audit Log:</strong> Owner, Admin, Moderator, and Viewer roles with per-server access scoping, active session revocation, and CSV audit export.</li>
+            <li><strong>Real-Time SSE &amp; Full File Manager:</strong> 2,000-line streaming console, drag-and-drop uploads, <span class="mono">.zip</span> extraction, and <span class="mono">.mrpack</span> client-only mod filtering.</li>
+          </ul>
+        </section>
+
+        <section id="v1-7-0" class="doc-section">
+          <h2>v1.7.0 (2026-11-19)</h2>
+          <ul>
+            <li><strong>MineServe Cloud Integration:</strong> Optional <span class="mono">*.play.mineserve.app</span> and <span class="mono">*.playms.uk</span> vanity tunnels, remote Web Admin relays, and direct-to-R2 encrypted backups.</li>
+            <li><strong>Diagnostics &amp; Self-Test:</strong> Redacted logcat bundle export and one-tap DNS/Bore/Playit/UPnP connectivity self-tests.</li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="doc-toc" aria-label="Table of Contents">
+        <div class="doc-toc-title">Releases</div>
+        <nav>
+          <a href="#v1-9-0">v1.9.0</a>
+          <a href="#v1-8-1">v1.8.1</a>
+          <a href="#v1-8-0">v1.8.0</a>
+          <a href="#v1-7-0">v1.7.0</a>
+        </nav>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div>MineServe (GPL-3.0) · Not affiliated with Mojang or Microsoft.</div>
+        <div style="font-size: 12.5px; margin-top: 4px;">Operated by ZEDCEE LTD (Company No. 16425948) · 50 Princes Street, Ipswich, England, IP1 1RJ · <a href="mailto:devwithzachary@pm.me" class="doc-link">devwithzachary@pm.me</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

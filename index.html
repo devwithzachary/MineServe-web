@@ -1,52 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MineServe - Dedicated Minecraft Server Hosting on Android &amp; Linux</title>
+  <title>MineServe - Open-Source Minecraft Server Studio (Android, Desktop &amp; WebUI)</title>
   <meta name="description"
-    content="Run full-featured Minecraft Java, Bedrock &amp; Proxy servers on Android (100% rootless) and Linux Desktop &amp; Headless Servers (Beta). Built-in multi-user Web Admin, Bore/Playit tunnels, and optional MineServe Cloud." />
-  <meta property="og:title" content="MineServe - Minecraft Server Hosting on Android &amp; Linux" />
+    content="MineServe is a free, GPL-3.0 open-source Minecraft server studio across Android (100% rootless), Linux, Windows, macOS, and Headless WebUI (:8080)." />
+
+  <!-- OpenGraph / Social Card (Centralized 1200x630 PNG Brand Asset Slot: assets/og-cover.png) -->
+  <meta property="og:title" content="MineServe - Open-Source Minecraft Server Studio" />
   <meta property="og:description"
-    content="Host Paper, Purpur, Folia, Fabric, Forge, NeoForge, Vanilla, Bedrock, Velocity &amp; BungeeCord servers on Android and Linux." />
+    content="Host Paper, Purpur, Folia, Fabric, Forge, NeoForge, Vanilla, Bedrock, and Proxy servers on rootless Android, Desktop, and Headless WebUI." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mineserve.app" />
-  <meta property="og:image" content="https://mineserve.app/assets/logo.png" />
-  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <meta property="og:image" content="https://mineserve.app/assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mineserve.app/assets/og-cover.png" />
+
+  <!-- Centralized Favicon & App Icon Slots (Human-made assets: assets/logo.svg, assets/favicon.png, assets/logo.png) -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/mineserve-m3-tokens.css" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <script defer src="https://stats.devwithzachary.com/stats"
+    data-website-id="0f927c80-a65d-484a-ac6d-f5de10c83bec"
+    data-domains="mineserve.app"></script>
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("mineserve_web_theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (_) {}
+    })();
+  </script>
 </head>
 
 <body>
-  <!-- Top Navigation -->
-  <header class="site-header">
+  <!-- Sticky Material 3 Top App Bar -->
+  <header id="site-header" class="site-header">
     <div id="nav-inner" class="container nav-inner">
       <a href="#" class="brand">
-        <img src="assets/logo.png" alt="MineServe Logo" />
+        <!-- Centralized Master Vector Logo Slot: assets/logo.svg (with raster fallback assets/logo.png) -->
+        <img src="assets/logo.svg" data-fallback-src="assets/logo.png" alt="MineServe Logo" width="34" height="34" />
         <span>MineServe</span>
-        <span class="version-pill">v1.8.1</span>
+        <span class="version-pill">v1.9.0</span>
       </a>
 
-      <button id="mobile-menu-btn" class="mobile-menu-btn" type="button" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+      <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" type="button" aria-label="Toggle Menu" aria-expanded="false">
+        <svg class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg>
+      </button>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary Navigation">
         <a href="#features">Features</a>
-        <a href="#linux">Linux Beta</a>
         <a href="#screenshots">Screenshots</a>
+        <a href="#download">Downloads</a>
         <a href="#engines">Engines</a>
-        <a href="#cloud">MineServe Cloud</a>
+        <a href="#cloud">Cloud</a>
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
         <a href="#faq">FAQ</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-cloud btn-sm">Cloud Console</a>
-        <a href="#linux" class="btn btn-secondary btn-sm">Linux Install</a>
-        <a href="https://play.google.com/store/apps/details?id=com.devwithzachary.mineserve" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Google Play</a>
+        <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Switch to light mode" title="Toggle Light / Dark theme">
+          <svg id="theme-icon-sun" class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17q-2.075 0-3.537-1.463T7 12t1.463-3.537T12 7t3.538 1.463T17 12t-1.463 3.538T12 17m-7-4H1v-2h4zm18 0h-4v-2h4zM11 5V1h2v4zm0 18v-4h2v4zM6.4 7.75L3.875 5.325L5.3 3.85l2.4 2.5zm12.3 12.4l-2.425-2.525L17.6 16.25l2.525 2.425zM16.25 6.4l2.425-2.525L20.15 5.3l-2.5 2.4zM3.85 18.7l2.525-2.425L7.75 17.6l-2.425 2.525z"/></svg>
+          <svg id="theme-icon-moon" class="ms-icon hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21q-3.75 0-6.375-2.625T3 12t2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21"/></svg>
+        </button>
+        <a id="nav-download-cta" href="#download" class="btn btn-tonal btn-sm">
+          <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>
+          <span>Download</span>
+        </a>
       </div>
     </div>
   </header>
@@ -57,31 +95,48 @@
       <div class="container hero-grid">
         <div>
           <div class="hero-eyebrow">
-            <span>●</span>
-            <span>NEW IN v1.8.0 · Linux Desktop &amp; Headless Server Beta + Multi-User Web Admin</span>
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>GPL-3.0 Open Source · v1.9.0 · Android, Desktop &amp; Homelab WebUI</span>
           </div>
           <h1>
-            Dedicated Minecraft Servers on <span class="gradient-text">Android &amp; Linux.</span>
+            The Free, Open-Source <span class="hero-accent">Minecraft Server Studio.</span>
           </h1>
           <p class="hero-lead">
-            Host Paper, Purpur, Folia, Fabric, Forge, NeoForge, Vanilla, Bedrock, and Velocity/BungeeCord networks on
-            your Android device (100% rootless via PRoot) or natively on your Linux PC, home server, or headless VPS.
+            Run Paper, Purpur, Folia, Fabric, Forge, NeoForge, Vanilla, Bedrock, and Proxy servers anywhere:
+            100% rootless on <strong>Android</strong>, natively on <strong>Linux, Windows, and macOS</strong>, or on any headless server via the <strong>:8080 WebUI</strong>.
           </p>
 
           <div class="hero-ctas">
-            <a href="https://play.google.com/store/apps/details?id=com.devwithzachary.mineserve" target="_blank" rel="noopener noreferrer"
-              class="btn btn-primary">
-              Get it on Google Play
+            <a id="hero-primary-download" href="#download" class="btn btn-primary">
+              <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"/></svg>
+              <span id="hero-primary-label">Download MineServe</span>
             </a>
-            <a href="#linux" class="btn btn-secondary">
-              Linux Desktop &amp; Server (Beta)
+            <a href="https://github.com/devwithzachary/MineServe" target="_blank" rel="noopener noreferrer" class="btn btn-outlined">
+              <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6l6 6zm5.2 0l4.6-4.6l-4.6-4.6L16 6l6 6l-6 6z"/></svg>
+              <span>View on GitHub</span>
             </a>
-            <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer"
-              class="btn btn-secondary">
-              Direct APK &amp; Packages
+          </div>
+
+          <div class="platform-strip" aria-label="Supported Platforms">
+            <a href="#download" class="platform-chip" data-os-chip="linux" data-select-download="linux">
+              <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm0-2h16V8H4zm2-2v-2h5v2zm1.4-3.6L6 11l1.4-1.4l2.8 2.8l-2.8 2.8L6 13.8z"/></svg>
+              <span>Linux</span>
             </a>
-            <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-cloud">
-              MineServe Cloud →
+            <a href="#download" class="platform-chip" data-os-chip="windows" data-select-download="windows">
+              <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-2h20v2zm2-3q-.825 0-1.412-.587T2 15V5q0-.825.588-1.412T4 3h16q.825 0 1.413.588T22 5v10q0 .825-.587 1.413T20 17zm0-2h16V5H4z"/></svg>
+              <span>Windows</span>
+            </a>
+            <a href="#download" class="platform-chip" data-os-chip="macos" data-select-download="macos">
+              <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-2h20v2zm2-3q-.825 0-1.412-.587T2 15V5q0-.825.588-1.412T4 3h16q.825 0 1.413.588T22 5v10q0 .825-.587 1.413T20 17zm0-2h16V5H4z"/></svg>
+              <span>macOS</span>
+            </a>
+            <a href="#download" class="platform-chip" data-os-chip="android" data-select-download="android">
+              <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 23q-.825 0-1.412-.587T5 21V3q0-.825.588-1.412T7 1h10q.825 0 1.413.588T19 3v18q0 .825-.587 1.413T17 23zm0-5v3h10v-3zm0-2h10V6H7z"/></svg>
+              <span>Android</span>
+            </a>
+            <a href="#download" class="platform-chip" data-os-chip="docker" data-select-download="docker">
+              <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm0-2h16V8H4z"/></svg>
+              <span>Docker</span>
             </a>
           </div>
 
@@ -91,11 +146,11 @@
               <div class="stat-label">Java, Modded, Bedrock &amp; Proxies</div>
             </div>
             <div class="stat-box">
-              <div class="stat-value">Android + Linux</div>
-              <div class="stat-label">Rootless PRoot &amp; Native Linux Beta</div>
+              <div class="stat-value">5 Platforms</div>
+              <div class="stat-label">Android, Linux, Win, macOS &amp; WebUI</div>
             </div>
             <div class="stat-box">
-              <div class="stat-value">Java 8 / 17 / 21 / 25</div>
+              <div class="stat-value">Java 8 - 25</div>
               <div class="stat-label">Isolated Multi-Version Runtimes</div>
             </div>
           </div>
@@ -103,216 +158,576 @@
 
         <div class="hero-preview">
           <div class="preview-bar">
-            <div class="dots">
-              <span class="dot red"></span>
-              <span class="dot amber"></span>
-              <span class="dot green"></span>
-            </div>
-            <span class="mono">mineserve-engine · android + linux</span>
-            <span class="t-ok mono">● ONLINE</span>
+            <span class="mono">mineserve-engine · cross-platform</span>
+            <span class="preview-pill">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>ONLINE</span>
+            </span>
           </div>
           <div class="terminal-lines">
             <div class="t-dim">$ curl -fsSL https://mineserve.app/install.sh | bash</div>
-            <div class="t-ok">[MineServe] Installed MineServe v1.8.1 (Desktop GUI + Headless CLI)</div>
+            <div class="t-ok">[MineServe] Installed v1.9.0 (Desktop Studio + Headless :8080)</div>
             <div class="t-cyan">[Runtime] Provisioned isolated OpenJDK 21.0.5 LTS (64-bit)</div>
             <div>[14:22:01 INFO]: Starting minecraft server version 1.21.4 (Paper)</div>
             <div>[14:22:03 INFO]: Preparing level "world" (Done in 2.14s!)</div>
-            <div class="t-ok">[Network] Public Tunnel Active → survival.play.mineserve.app</div>
-            <div class="t-cyan">[WebAdmin] Multi-User RBAC + Live SSE Stream → http://192.168.1.42:8080</div>
-            <div class="t-ok">[Backup] Off-device backup synced (world-2026-11-23.zip · 148 MB)</div>
+            <div class="t-ok">[Network] Public Tunnel Active -> survival.play.mineserve.app</div>
+            <div class="t-cyan">[WebAdmin] Multi-User RBAC + Live SSE -> http://192.168.1.42:8080</div>
+            <div class="t-ok">[Backup] Off-device snapshot synced (world-2026-11-26.zip · 148 MB)</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Linux Desktop & Headless Server (Beta) -->
-    <section id="linux" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">New in v1.8.0 · Public Beta</span>
-          <h2>MineServe for Linux (Desktop GUI &amp; Headless Server)</h2>
-          <p>Run MineServe natively on Ubuntu, Debian, Arch, CachyOS, Fedora, or any headless Linux home server or VPS with zero container overhead.</p>
-        </div>
-
-        <div class="linux-install-card">
-          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;">
-            <div>
-              <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.3rem; margin: 0 0 4px;">1-Line Quick Install <span class="badge-new">BETA</span></h3>
-              <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Automatically detects your distro and installs the native <span class="mono">.deb</span> (Debian/Ubuntu), <span class="mono">.pkg.tar.zst</span> (Arch/CachyOS), or self-contained bundle with an embedded Java runtime.</p>
-            </div>
-            <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">View All Linux Packages →</a>
-          </div>
-
-          <div class="cmd-grid">
-            <div class="cmd-box">
-              <div class="cmd-box-header">
-                <span>🖥️ Desktop GUI + CLI (Workstations &amp; PCs)</span>
-                <button class="copy-cmd-btn" type="button" data-copy="curl -fsSL https://mineserve.app/install.sh | bash">Copy</button>
-              </div>
-              <div class="cmd-code">
-                <span>curl -fsSL https://mineserve.app/install.sh | bash</span>
-              </div>
-            </div>
-
-            <div class="cmd-box">
-              <div class="cmd-box-header">
-                <span>🖧 Headless Server (Enables systemd service on port 8080)</span>
-                <button class="copy-cmd-btn" type="button" data-copy="curl -fsSL https://mineserve.app/install.sh | bash -s -- --headless">Copy</button>
-              </div>
-              <div class="cmd-code">
-                <span>curl -fsSL https://mineserve.app/install.sh | bash -s -- --headless</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Linux Distribution Packages -->
-        <div class="grid-4" style="margin-bottom: 24px;">
-          <div class="card">
-            <h3>Debian &amp; Ubuntu <span class="mono" style="font-size: 0.8rem; color: var(--emerald-light);">.deb</span></h3>
-            <p>Native package for Ubuntu, Debian, Linux Mint, and Pop!_OS with desktop launcher and <span class="mono">systemd</span> service unit.</p>
-          </div>
-          <div class="card">
-            <h3>Arch &amp; CachyOS <span class="mono" style="font-size: 0.8rem; color: var(--emerald-light);">.pkg.tar.zst</span></h3>
-            <p>Pre-built <span class="mono">pacman</span> package and <span class="mono">PKGBUILD</span> for Arch Linux, CachyOS, Manjaro, and EndeavourOS.</p>
-          </div>
-          <div class="card">
-            <h3>Universal AppImage <span class="mono" style="font-size: 0.8rem; color: var(--emerald-light);">.AppImage</span></h3>
-            <p>Single-file portable Desktop GUI with embedded JRE. Just mark executable and run on any <span class="mono">x86_64</span> Linux distro.</p>
-          </div>
-          <div class="card">
-            <h3>Tarball &amp; Docker <span class="mono" style="font-size: 0.8rem; color: var(--emerald-light);">.tar.gz / Compose</span></h3>
-            <p>Self-contained <span class="mono">.tar.gz</span> archive or headless <span class="mono">docker compose up -d</span> container deployment.</p>
-          </div>
-        </div>
-
-        <!-- Getting Started on Linux Steps -->
-        <div class="steps-grid">
-          <div class="card">
-            <div class="step-number">1</div>
-            <h3>Install &amp; Launch</h3>
-            <p>Run the 1-line installer above. Launch <strong>MineServe</strong> from your application menu (or run <span class="mono">mineserve</span>) for the native Compose Desktop GUI with KDE/Wayland &amp; X11 system tray support and HiDPI scaling.</p>
-          </div>
-          <div class="card">
-            <div class="step-number">2</div>
-            <h3>Or Run Headless on Port 8080</h3>
-            <p>On a home server or VPS, run <span class="mono">mineserve --headless</span> (or use the <span class="mono">--headless</span> installer flag). Open <span class="mono">http://&lt;server-ip&gt;:8080</span> in any browser and sign in with the printed <span class="mono">admin</span> password (reset anytime via <span class="mono">mineserve --reset-admin</span>).</p>
-          </div>
-          <div class="card">
-            <div class="step-number">3</div>
-            <h3>Create or Import a Server</h3>
-            <p>Pick any of the 11 supported engines, import an existing server <span class="mono">.zip</span>, or import a Modrinth <span class="mono">.mrpack</span> modpack. MineServe automatically downloads isolated OpenJDK runtimes (Java 8, 17, 21, or 25) and filters out client-only mods.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Key Features -->
-    <section id="features" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Capabilities</span>
-          <h2>Everything You Need to Host Like a Pro</h2>
-          <p>Designed from the ground up for Android phones, tablets, and Linux desktops &amp; headless servers.</p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card">
-            <div class="card-icon">🐧</div>
-            <h3>Android + Linux Desktop &amp; Server <span class="badge-new">NEW</span></h3>
-            <p>100% rootless PRoot sandbox on Android and zero-overhead native execution on Linux Desktop &amp; Headless servers with isolated Java 8, 17, 21, and 25 runtimes.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🛡️</div>
-            <h3>Multi-User Web Admin &amp; RBAC <span class="badge-new">NEW</span></h3>
-            <p>Create team accounts with Owner, Admin, Moderator, and Viewer roles, active session management, and a searchable Audit Log with 1-click CSV export.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">⚡</div>
-            <h3>Live SSE Console &amp; File Manager <span class="badge-new">NEW</span></h3>
-            <p>Real-time Server-Sent Events console stream (2,000-line scrollback), full browser file manager with drag-and-drop upload and <span class="mono">.zip</span> extraction, and 1-click engine build upgrades.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🧩</div>
-            <h3>Modrinth &amp; Smart .mrpack Filtering <span class="badge-new">NEW</span></h3>
-            <p>Browse Modrinth plugins and mods in-app or import <span class="mono">.mrpack</span> modpacks. Automatic client-only mod detection disables client-side mods so dedicated servers never crash on boot.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🌐</div>
-            <h3>Zero-Config Tunnels &amp; UPnP</h3>
-            <p>Automatic UPnP &amp; NAT-PMP router port mapping, plus built-in native <span class="mono">bore.pub</span> and <span class="mono">Playit.gg</span> tunnels that work over 4G/5G and CGNAT without port forwarding.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">☁️</div>
-            <h3>MineServe Cloud (Optional)</h3>
-            <p>Sign in with a 6-digit email code for custom <span class="mono">*.play.mineserve.app</span> (and Pro <span class="mono">*.playms.uk</span>) vanity addresses, remote Web Admin relays, and encrypted Cloudflare R2 backups.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🗺️</div>
-            <h3>In-App 2D Live Map &amp; World Tools</h3>
-            <p>Pan and zoom live 2D Squaremap world tiles directly inside Android, Linux Desktop, and Web Admin. Pre-generate chunks, inspect <span class="mono">.mca</span> regions, and prune uninhabited chunks.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">💾</div>
-            <h3>Local, WebDAV &amp; SAF Backups</h3>
-            <p>Create 1-tap <span class="mono">.zip</span> backups with automated synchronization to Nextcloud, ownCloud, generic WebDAV servers, Android SAF folders (Google Drive / SD cards), or Cloudflare R2.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">💤</div>
-            <h3>Sleep-on-Idle &amp; Auto-Wake</h3>
-            <p>Automatically stops idle servers and listens for incoming Java TCP or Bedrock RakNet player pings to wake the server on demand, complete with cron tasks and Discord webhooks.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Screenshot Showcase -->
+    <!-- Interactive Screenshot Switcher (28px-radius #1B2333 frame) -->
     <section id="screenshots" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Interface</span>
-          <h2>Designed for Mobile, Desktop &amp; Browser</h2>
-          <p>Tap any screen below to preview MineServe's Obsidian &amp; Emerald interface.</p>
+          <span class="section-tag">Unified Obsidian Workspace</span>
+          <h2>One Studio Across Desktop, Android &amp; Browser</h2>
+          <p>Explore the shared Material Design 3 workspace across Desktop, Android, and Headless WebUI.</p>
         </div>
 
-        <div class="showcase-wrap">
-          <div class="showcase-tabs">
-            <button class="showcase-tab active" type="button" data-src="assets/screenshots/dashboard.png" data-alt="MineServe Server Dashboard">
-              <strong>Multi-Server Dashboard</strong>
-              <span>Manage multiple Java, Modded, Bedrock, and Proxy instances with live status cards.</span>
-            </button>
-            <button class="showcase-tab" type="button" data-src="assets/screenshots/console.png" data-alt="Interactive PTY Console">
-              <strong>Interactive PTY Terminal &amp; Log</strong>
-              <span>Full ANSI color console with quick command chips and crash log analysis.</span>
-            </button>
-            <button class="showcase-tab" type="button" data-src="assets/screenshots/server_detail.png" data-alt="Real-Time Telemetry">
-              <strong>Real-Time CPU, RAM &amp; TPS Telemetry</strong>
-              <span>Live rolling performance charts and 1-tap garbage collection controls.</span>
-            </button>
-            <button class="showcase-tab" type="button" data-src="assets/screenshots/plugins_search.png" data-alt="Modrinth Plugin and Mod Browser">
-              <strong>In-App Modrinth Marketplace</strong>
-              <span>Search and install plugins, mods, and .mrpack modpacks with smart dependency handling.</span>
-            </button>
-            <button class="showcase-tab" type="button" data-src="assets/screenshots/settings_tab.png" data-alt="Server Settings and Networking">
-              <strong>Server Networking, Tunnels &amp; Settings</strong>
-              <span>Configure UPnP, Bore, Playit.gg, MineServe Cloud, and server.properties in one place.</span>
-            </button>
-            <button class="showcase-tab" type="button" data-src="assets/screenshots/settings.png" data-alt="App Settings and Runtime Manager">
-              <strong>App Settings, Java Runtimes &amp; Web Admin</strong>
-              <span>Manage isolated Java 8/17/21/25 runtimes, Web Remote Admin, and safeguards.</span>
-            </button>
+        <div class="showcase-frame">
+          <div class="showcase-header">
+            <div class="m3-segmented-row" role="tablist" aria-label="Platform screenshots">
+              <button type="button" class="m3-segmented-btn" data-platform="desktop" role="tab" aria-selected="false">Desktop</button>
+              <button type="button" class="m3-segmented-btn active" data-platform="android" role="tab" aria-selected="true">Android</button>
+              <button type="button" class="m3-segmented-btn" data-platform="webui" role="tab" aria-selected="false">Headless WebUI</button>
+            </div>
+            <p id="showcase-caption" class="showcase-caption">Rootless Android Studio: manage Paper, Modded, Bedrock, and Proxy instances on-device.</p>
+          </div>
+
+          <div id="showcase-android-subtabs" class="showcase-subtabs" aria-label="Android screens">
+            <button type="button" class="showcase-subchip active" data-src="assets/screenshots/dashboard.png" data-alt="MineServe Android Dashboard">Dashboard</button>
+            <button type="button" class="showcase-subchip" data-src="assets/screenshots/console.png" data-alt="MineServe Android PTY Console">Console</button>
+            <button type="button" class="showcase-subchip" data-src="assets/screenshots/server_detail.png" data-alt="MineServe Android Telemetry">Performance</button>
+            <button type="button" class="showcase-subchip" data-src="assets/screenshots/plugins_search.png" data-alt="MineServe Modrinth Marketplace">Modrinth</button>
+            <button type="button" class="showcase-subchip" data-src="assets/screenshots/settings_tab.png" data-alt="MineServe Networking and Settings">Networking</button>
+            <button type="button" class="showcase-subchip" data-src="assets/screenshots/settings.png" data-alt="MineServe App Settings">App Settings</button>
           </div>
 
           <div class="showcase-stage">
-            <img id="showcase-img" src="assets/screenshots/dashboard.png" alt="MineServe Server Dashboard" />
+            <img id="showcase-img" src="assets/screenshots/dashboard.png" alt="MineServe Android Dashboard" />
+            <div id="showcase-fallback" class="showcase-slot-fallback hidden">
+              <div class="showcase-slot-icon">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.587 1.413T19 21zm0-2h14V5H5zm1-2h12l-3.75-5l-3 4L9 13z"/></svg>
+              </div>
+              <h3 id="showcase-fallback-title">Desktop Screenshot Slot</h3>
+              <p id="showcase-fallback-desc">Drop your captured screenshot into the centralized slot below to display it here automatically.</p>
+              <span id="showcase-fallback-path" class="showcase-slot-path">assets/screenshots/desktop.png</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tonal Bento Grid -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Architecture &amp; Capabilities</span>
+          <h2>Built for Phones, Workstations &amp; Headless Homelabs</h2>
+          <p>Zero ads, zero proprietary bloat, and full local control on every platform.</p>
+        </div>
+
+        <div class="bento-grid">
+          <article class="bento-card bento-span-7">
+            <div class="bento-top">
+              <div class="bento-icon bento-icon--primary">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91c4.59-1.15 8-5.86 8-10.91V5zm-1.06 13.54L7.4 12l1.41-1.41l2.12 2.12l4.24-4.24l1.41 1.41z"/></svg>
+              </div>
+              <span class="bento-badge">100% Rootless</span>
+            </div>
+            <h3>Rootless Android Execution (PRoot)</h3>
+            <p>Runs a clean Ubuntu userspace environment inside PRoot on standard unrooted Android phones and tablets, complete with isolated OpenJDK 8, 17, 21, and 25 runtimes, background service safeguards, and SAF storage backups.</p>
+            <div class="bento-meta">
+              <span class="m3-chip">Zero Root Required</span>
+              <span class="m3-chip">Battery &amp; Thermal Safeguards</span>
+              <span class="m3-chip">F-Droid Compliant</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-span-5">
+            <div class="bento-top">
+              <div class="bento-icon bento-icon--secondary">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-2h20v2zm2-3q-.825 0-1.412-.587T2 15V5q0-.825.588-1.412T4 3h16q.825 0 1.413.588T22 5v10q0 .825-.587 1.413T20 17zm0-2h16V5H4z"/></svg>
+              </div>
+              <span class="bento-badge">Compose Multiplatform</span>
+            </div>
+            <h3>Native KMP Desktop Studio</h3>
+            <p>Full-speed native execution on Linux, Windows, and macOS with zero container overhead, 280dp persistent server drawer, live CPU/Memory/TPS telemetry charts, and HiDPI scaling.</p>
+            <div class="bento-meta">
+              <span class="m3-chip">Linux / Windows / macOS</span>
+              <span class="m3-chip">Zero Container Overhead</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-span-5">
+            <div class="bento-top">
+              <div class="bento-icon bento-icon--secondary">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm0-2h16V8H4zm2-2v-2h5v2zm1.4-3.6L6 11l1.4-1.4l2.8 2.8l-2.8 2.8L6 13.8z"/></svg>
+              </div>
+              <span class="bento-badge mono">:8080</span>
+            </div>
+            <h3>Homelab Headless WebUI</h3>
+            <p>Deploy via <span class="mono">mineserve --headless</span> or <span class="mono">systemd</span> on any home server or VPS. Includes multi-user RBAC (Owner, Admin, Moderator, Viewer), real-time SSE console logs, in-browser file editor, and CSV audit exports.</p>
+            <div class="bento-meta">
+              <span class="m3-chip">Multi-User RBAC</span>
+              <span class="m3-chip">Live SSE Console</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-span-7">
+            <div class="bento-top">
+              <div class="bento-icon bento-icon--tertiary">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m-1-2.05V18q-.825 0-1.412-.587T9 16v-1l-4.8-4.8q-.075.45-.137.9T4 12q0 3.025 1.988 5.3T11 19.95m6.9-2.55q.5-.55.9-1.187t.663-1.325t.387-1.413T20 12q0-2.45-1.362-4.475T15 4.6V5q0 .825-.587 1.413T13 7h-2v2q0 .425-.288.713T10 10H8v2h6q.425 0 .713.288T15 13v3h1q.65 0 1.175.388T17.9 17.4"/></svg>
+              </div>
+              <span class="bento-badge bento-badge--tertiary">CGNAT Ready</span>
+            </div>
+            <h3>Zero-Config Tunneling &amp; UPnP</h3>
+            <p>Automatic UPnP and NAT-PMP router port mapping, plus built-in <span class="mono">bore.pub</span> and <span class="mono">Playit.gg</span> tunnels that work behind mobile 4G/5G and CGNAT without router login. Upgrade optionally to MineServe Cloud for vanity <span class="mono">*.play.mineserve.app</span> domains.</p>
+            <div class="bento-meta">
+              <span class="m3-chip">Bore &amp; Playit.gg</span>
+              <span class="m3-chip">UPnP / NAT-PMP</span>
+              <span class="m3-chip">Optional Cloud Relay</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-span-4">
+            <div class="bento-top">
+              <div class="bento-icon bento-icon--secondary">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22q-.425 0-.712-.288T11 21v-2H7q-.825 0-1.412-.587T5 17v-4H3q-.425 0-.712-.288T2 12t.288-.712T3 11h2V7q0-.825.588-1.412T7 5h4V3q0-.425.288-.712T12 2t.713.288T13 3v2h4q.825 0 1.413.588T19 7v4h2q.425 0 .713.288T22 12t-.288.713T21 13h-2v4q0 .825-.587 1.413T17 19h-4v2q0 .425-.288.713T12 22"/></svg>
+              </div>
+            </div>
+            <h3>Modrinth &amp; .mrpack Filtering</h3>
+            <p>Browse plugins and mods in-app or import <span class="mono">.mrpack</span> modpacks with automatic client-only mod filtering so servers boot cleanly.</p>
+          </article>
+
+          <article class="bento-card bento-span-4">
+            <div class="bento-top">
+              <div class="bento-icon bento-icon--warning">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 21l-6-2.1l-4.65 1.8q-.5.2-.925-.112T3 19.75V5.75q0-.325.188-.575T3.7 4.8L9 3l6 2.1l4.65-1.8q.5-.2.925.113T21 4.25v14q0 .325-.187.575t-.513.375zm-1-2.45V6.85l-4-1.4v11.7z"/></svg>
+              </div>
+            </div>
+            <h3>2D Live Map &amp; World Tools</h3>
+            <p>Pan Squaremap 2D world tiles in-app, pre-generate chunks, inspect <span class="mono">.mca</span> regions, and prune uninhabited chunks.</p>
+          </article>
+
+          <article class="bento-card bento-span-4">
+            <div class="bento-top">
+              <div class="bento-icon bento-icon--primary">
+                <svg class="ms-icon ms-icon--lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h11.175q.4 0 .763.15t.637.425l2.85 2.85q.275.275.425.638t.15.762V19q0 .825-.587 1.413T19 21zm7-3q1.25 0 2.125-.875T15 15t-.875-2.125T12 12t-2.125.875T9 15t.875 2.125T12 18m-6-8h9V6H6z"/></svg>
+              </div>
+            </div>
+            <h3>Backups, Standby &amp; Webhooks</h3>
+            <p>Automated <span class="mono">.zip</span> backups to WebDAV, SAF, or Cloudflare R2, sleep-on-idle with auto-wake, cron tasks, and Discord webhooks.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multiplatform Download Hub (#download + #linux anchor compatibility) -->
+    <section id="download" class="section">
+      <span id="linux"></span>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Install MineServe</span>
+          <h2>Get Started on Your Platform</h2>
+          <p>100% free and GPL-3.0 open source across desktop workstations, headless servers, and Android.</p>
+        </div>
+
+        <div class="download-hub-bar">
+          <div class="m3-segmented-row" role="tablist" aria-label="Download platforms">
+            <button type="button" class="m3-segmented-btn active" data-download-tab="linux">Linux</button>
+            <button type="button" class="m3-segmented-btn" data-download-tab="windows">Windows</button>
+            <button type="button" class="m3-segmented-btn" data-download-tab="macos">macOS</button>
+            <button type="button" class="m3-segmented-btn" data-download-tab="android">Android</button>
+            <button type="button" class="m3-segmented-btn" data-download-tab="docker">Docker</button>
+          </div>
+        </div>
+
+        <!-- Linux Panel -->
+        <div id="download-panel-linux" class="download-panel active">
+          <div class="linux-install-card">
+            <div class="linux-install-head">
+              <div>
+                <h3>1-Line Quick Install <span class="badge-tag">DESKTOP + HEADLESS</span></h3>
+                <p>Auto-detects your distro and installs <span class="mono">.deb</span>, <span class="mono">.pkg.tar.zst</span>, or portable bundle with embedded Java runtime.</p>
+              </div>
+              <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">All Linux Packages</a>
+            </div>
+
+            <div class="cmd-grid--3">
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title">
+                    <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-2h20v2zm2-3q-.825 0-1.412-.587T2 15V5q0-.825.588-1.412T4 3h16q.825 0 1.413.588T22 5v10q0 .825-.587 1.413T20 17zm0-2h16V5H4z"/></svg>
+                    <span>Desktop GUI + CLI</span>
+                  </span>
+                  <button class="copy-cmd-btn" type="button" data-copy="curl -fsSL https://mineserve.app/install.sh | bash">Copy</button>
+                </div>
+                <div class="cmd-code">
+                  <span>curl -fsSL https://mineserve.app/install.sh | bash</span>
+                </div>
+              </div>
+
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title">
+                    <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm0-2h16V8H4zm2-2v-2h5v2zm1.4-3.6L6 11l1.4-1.4l2.8 2.8l-2.8 2.8L6 13.8z"/></svg>
+                    <span>Headless systemd (:8080)</span>
+                  </span>
+                  <button class="copy-cmd-btn" type="button" data-copy="curl -fsSL https://mineserve.app/install.sh | bash -s -- --headless">Copy</button>
+                </div>
+                <div class="cmd-code">
+                  <span>curl -fsSL https://mineserve.app/install.sh | bash -s -- --headless</span>
+                </div>
+              </div>
+
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title">
+                    <svg class="ms-icon ms-icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12q-1.65 0-2.825-1.175T8 8t1.175-2.825T12 4t2.825 1.175T16 8t-1.175 2.825T12 12m-8 8v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"/></svg>
+                    <span>Rootless User (--user)</span>
+                  </span>
+                  <button class="copy-cmd-btn" type="button" data-copy="curl -fsSL https://mineserve.app/install.sh | bash -s -- --user">Copy</button>
+                </div>
+                <div class="cmd-code">
+                  <span>curl -fsSL https://mineserve.app/install.sh | bash -s -- --user</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="linux-install-card">
+            <div class="linux-install-head">
+              <div>
+                <h3>Signed APT &amp; RPM Repositories <span class="badge-tag">AUTO-UPDATES</span></h3>
+                <p>Keep MineServe updated with <span class="mono">apt upgrade</span> or <span class="mono">dnf upgrade</span> for automatic system updates.</p>
+              </div>
+              <a href="guides.html#linux-desktop" class="btn btn-outlined btn-sm">Setup Guide</a>
+            </div>
+            <div class="cmd-grid">
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>Debian / Ubuntu (APT)</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="curl -fsSL https://mineserve.app/apt/mineserve-archive-keyring.gpg | sudo tee /usr/share/keyrings/mineserve-archive-keyring.gpg >/dev/null && echo &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/mineserve-archive-keyring.gpg] https://mineserve.app/apt stable main&quot; | sudo tee /etc/apt/sources.list.d/mineserve.list >/dev/null && sudo apt-get update && sudo apt-get install mineserve">Copy</button>
+                </div>
+                <div class="cmd-code cmd-code--multi">curl -fsSL https://mineserve.app/apt/mineserve-archive-keyring.gpg | sudo tee /usr/share/keyrings/mineserve-archive-keyring.gpg >/dev/null
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mineserve-archive-keyring.gpg] https://mineserve.app/apt stable main" | sudo tee /etc/apt/sources.list.d/mineserve.list >/dev/null
+sudo apt-get update && sudo apt-get install mineserve</div>
+              </div>
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>Fedora / RHEL (DNF)</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="sudo curl -fsSL https://mineserve.app/rpm/mineserve.repo -o /etc/yum.repos.d/mineserve.repo && sudo dnf install mineserve">Copy</button>
+                </div>
+                <div class="cmd-code cmd-code--multi">sudo curl -fsSL https://mineserve.app/rpm/mineserve.repo -o /etc/yum.repos.d/mineserve.repo
+sudo dnf install mineserve</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-4">
+            <div class="card card-flex">
+              <div>
+                <h3>Debian &amp; Ubuntu <span class="badge-tag">.deb</span></h3>
+                <p>Native package for Ubuntu, Debian, Mint, and Pop!_OS with launcher and <span class="mono">systemd</span> service unit.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="\.deb$">Download .deb</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>Fedora &amp; RHEL <span class="badge-tag">.rpm</span></h3>
+                <p>Native RPM package for Fedora, RHEL, Rocky, and AlmaLinux with <span class="mono">systemd</span> integration.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="\.rpm$">Download .rpm</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>Universal AppImage <span class="badge-tag">.AppImage</span></h3>
+                <p>Single-file portable Desktop GUI with embedded JRE for any <span class="mono">x86_64</span> Linux distro.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="\.AppImage$">Download AppImage</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>Arch &amp; Tarballs <span class="badge-tag">.tar.gz</span></h3>
+                <p>Pre-built <span class="mono">.pkg.tar.zst</span> for Arch/CachyOS plus self-contained <span class="mono">.tar.gz</span> archives.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="-linux-x64\.tar\.gz$">Download .tar.gz</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps-grid">
+            <div class="card">
+              <div class="step-number">1</div>
+              <h3>Install &amp; Launch</h3>
+              <p>Run the 1-line installer above and launch <strong>MineServe</strong> from your app menu or run <span class="mono">mineserve</span> for the native Desktop GUI.</p>
+            </div>
+            <div class="card">
+              <div class="step-number">2</div>
+              <h3>Or Run Headless on :8080</h3>
+              <p>On a homelab or VPS, pass <span class="mono">--headless</span>, open <span class="mono">http://&lt;server-ip&gt;:8080</span>, and sign in with the generated <span class="mono">admin</span> password.</p>
+            </div>
+            <div class="card">
+              <div class="step-number">3</div>
+              <h3>Create or Import a Server</h3>
+              <p>Pick any of the 11 engines, import a server <span class="mono">.zip</span>, or import a <span class="mono">.mrpack</span> modpack with isolated OpenJDK runtimes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Windows Panel -->
+        <div id="download-panel-windows" class="download-panel">
+          <div class="linux-install-card">
+            <div class="linux-install-head">
+              <div>
+                <h3>MineServe Desktop for Windows <span class="badge-tag badge-tag--warning">BETA</span></h3>
+                <p>Native Compose Desktop Studio and <span class="mono">--headless</span> WebUI on Windows 10 &amp; Windows 11 (<span class="mono">x64</span>) with automatic OpenJDK 8-25 management and Defender firewall checks.</p>
+              </div>
+              <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-asset-match="-windows-x64\.msi$" data-allow-prerelease="true">Download .msi Installer</a>
+            </div>
+
+            <div class="cmd-grid">
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>Winget (Windows Package Manager)</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="winget install DevWithZachary.MineServe">Copy</button>
+                </div>
+                <div class="cmd-code">
+                  <span>winget install DevWithZachary.MineServe</span>
+                </div>
+              </div>
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>Headless CLI (Portable .zip)</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="bin\mineserve.bat --headless">Copy</button>
+                </div>
+                <div class="cmd-code">
+                  <span>bin\mineserve.bat --headless</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="beta-callout">
+              <strong>Beta SmartScreen Notice:</strong> Windows Beta installers are unsigned until official SignPath Foundation CI signing is enabled in <span class="mono">v2.0.0</span>. If Windows Defender SmartScreen prompts, click <strong>More info -&gt; Run anyway</strong>.
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="card card-flex">
+              <div>
+                <h3>MSI Installer <span class="badge-tag">RECOMMENDED</span></h3>
+                <p>Per-user Windows Installer with Start Menu shortcut, clean upgrades, and bundled JRE.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="-windows-x64\.msi$" data-allow-prerelease="true">Download .msi</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>EXE Installer</h3>
+                <p>Standard Windows executable setup wizard with directory chooser and desktop integration.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="-windows-x64\.exe$" data-allow-prerelease="true">Download .exe</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>Portable Archive <span class="badge-tag">.zip</span></h3>
+                <p>Extract anywhere and run <span class="mono">bin\mineserve.bat</span> (GUI or <span class="mono">--headless</span>; requires Java 21+).</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="-windows-x64-portable\.zip$" data-allow-prerelease="true">Download .zip</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- macOS Panel -->
+        <div id="download-panel-macos" class="download-panel">
+          <div class="linux-install-card">
+            <div class="linux-install-head">
+              <div>
+                <h3>MineServe Desktop for macOS <span class="badge-tag badge-tag--warning">BETA</span></h3>
+                <p>Native Compose Desktop Studio and <span class="mono">--headless</span> WebUI on Apple Silicon (<span class="mono">arm64</span>) and Intel (<span class="mono">x64</span>) Macs.</p>
+              </div>
+              <div class="download-card-actions" style="margin-top:0;">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-asset-match="-macos-arm64\.dmg$" data-allow-prerelease="true">Apple Silicon (.dmg)</a>
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-asset-match="-macos-x64\.dmg$" data-allow-prerelease="true">Intel Mac (.dmg)</a>
+              </div>
+            </div>
+
+            <div class="cmd-grid">
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>Beta Gatekeeper Fix (After Copying to /Applications)</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="xattr -dr com.apple.quarantine /Applications/MineServe.app">Copy</button>
+                </div>
+                <div class="cmd-code">
+                  <span>xattr -dr com.apple.quarantine /Applications/MineServe.app</span>
+                </div>
+              </div>
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>Headless WebUI Mode (:8080)</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="/Applications/MineServe.app/Contents/MacOS/MineServe --headless">Copy</button>
+                </div>
+                <div class="cmd-code">
+                  <span>/Applications/MineServe.app/Contents/MacOS/MineServe --headless</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="beta-callout">
+              <strong>Beta Signing &amp; Bedrock Notes:</strong> Official Apple Developer ID notarization and Homebrew Cask distribution are scheduled for <span class="mono">v2.0.0</span>. For Bedrock players on macOS, choose <strong>Bedrock (Geyser)</strong> (Paper + GeyserMC) because Mojang does not publish a native macOS Bedrock Dedicated binary.
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="card card-flex">
+              <div>
+                <h3>Apple Silicon <span class="badge-tag">M1 - M4</span></h3>
+                <p>Native <span class="mono">arm64</span> <span class="mono">.dmg</span> bundle with embedded JRE and automatic Rosetta fallback for Java 8.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="-macos-arm64\.dmg$" data-allow-prerelease="true">Download arm64 .dmg</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>Intel Mac <span class="badge-tag">x64</span></h3>
+                <p>Native <span class="mono">x86_64</span> <span class="mono">.dmg</span> bundle for Intel-based MacBooks, iMacs, and Mac Minis.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="-macos-x64\.dmg$" data-allow-prerelease="true">Download x64 .dmg</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>Portable Tarball <span class="badge-tag">.tar.gz</span></h3>
+                <p>Lightweight CLI/GUI archive without bundled JRE (requires Java 21+ on your Mac).</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-asset-match="-macos-arm64-portable\.tar\.gz$" data-allow-prerelease="true">Download arm64 .tar.gz</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Android Panel -->
+        <div id="download-panel-android" class="download-panel">
+          <div class="grid-3">
+            <div class="card card-flex">
+              <div>
+                <h3>Google Play Store</h3>
+                <p>Install MineServe with automatic updates on any unrooted Android 8.0+ device.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.devwithzachary.mineserve" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Get on Google Play</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>F-Droid (Open Source)</h3>
+                <p>100% FOSS build verified reproducible with zero proprietary Google Play SDKs.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://f-droid.org/packages/com.devwithzachary.mineserve/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">View on F-Droid</a>
+              </div>
+            </div>
+            <div class="card card-flex">
+              <div>
+                <h3>Direct GitHub APK</h3>
+                <p>Sideload signed release APKs directly from GitHub Releases with SHA-256 verification.</p>
+              </div>
+              <div class="download-card-actions">
+                <a href="https://github.com/devwithzachary/MineServe/releases/latest" target="_blank" rel="noopener noreferrer" class="btn btn-outlined btn-sm" data-asset-match="-release\.apk$">Download .apk</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="steps-grid">
+            <div class="card">
+              <div class="step-number">1</div>
+              <h3>Rootless PRoot Setup</h3>
+              <p>On first launch, MineServe automatically sets up an isolated Ubuntu environment and OpenJDK 21 in user-space.</p>
+            </div>
+            <div class="card">
+              <div class="step-number">2</div>
+              <h3>Grant Battery Exemption</h3>
+              <p>Set Battery Usage to <strong>Unrestricted</strong> so Android keeps your server online in the background.</p>
+            </div>
+            <div class="card">
+              <div class="step-number">3</div>
+              <h3>Manage from Phone or Browser</h3>
+              <p>Use the native app, Quick Settings tile, or enable <strong>Web Remote Admin</strong> on port <span class="mono">:8080</span>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Docker Panel -->
+        <div id="download-panel-docker" class="download-panel">
+          <div class="linux-install-card">
+            <div class="linux-install-head">
+              <div>
+                <h3>Official Multi-Arch Docker Image <span class="badge-tag badge-tag--tertiary">AMD64 &amp; ARM64</span></h3>
+                <p>Run MineServe headless in Docker, Compose, Portainer, Unraid, CasaOS, or Proxmox with persistent <span class="mono">/data</span> storage.</p>
+              </div>
+              <a href="https://github.com/devwithzachary/MineServe/pkgs/container/mineserve" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">View on GHCR</a>
+            </div>
+
+            <div class="cmd-grid">
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>Docker Run (Latest Stable / Beta)</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="docker run -d --name mineserve -p 8080:8080 -p 8081:8081 -p 25565:25565/tcp -p 25565:25565/udp -p 19132:19132/udp -v mineserve-data:/data ghcr.io/devwithzachary/mineserve:latest">Copy</button>
+                </div>
+                <div class="cmd-code cmd-code--multi">docker run -d --name mineserve \
+  -p 8080:8080 -p 8081:8081 \
+  -p 25565:25565/tcp -p 25565:25565/udp \
+  -p 19132:19132/udp \
+  -v mineserve-data:/data \
+  ghcr.io/devwithzachary/mineserve:latest</div>
+              </div>
+
+              <div class="cmd-box">
+                <div class="cmd-box-header">
+                  <span class="cmd-box-title"><span>First-Run Admin Password &amp; Reset</span></span>
+                  <button class="copy-cmd-btn" type="button" data-copy="docker logs mineserve | head -n 40">Copy</button>
+                </div>
+                <div class="cmd-code cmd-code--multi"># View auto-generated admin password:
+docker logs mineserve | head -n 40
+
+# Or reset admin password anytime:
+docker exec -it mineserve mineserve --data-dir /data --reset-admin</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <h3>WebUI &amp; Live Map</h3>
+              <p><span class="mono">8080/tcp</span> serves the Material Design 3 Web Remote Admin; <span class="mono">8081/tcp</span> serves Squaremap 2D world tiles.</p>
+            </div>
+            <div class="card">
+              <h3>Minecraft Game Ports</h3>
+              <p><span class="mono">25565/tcp+udp</span> for Java Edition &amp; Velocity/BungeeCord proxies; <span class="mono">19132/udp</span> for Bedrock &amp; GeyserMC.</p>
+            </div>
+            <div class="card">
+              <h3>Persistent Volume</h3>
+              <p>Mount <span class="mono">/data</span> to preserve all server worlds, isolated Java runtimes, backups, and panel users across upgrades.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -324,7 +739,7 @@
         <div class="section-header">
           <span class="section-tag">11 Engines</span>
           <h2>Run Any Minecraft Server or Proxy Network</h2>
-          <p>From Minecraft 1.0 classics to the latest 1.21+ releases, modded servers, and multi-server proxy networks.</p>
+          <p>From Minecraft 1.0 classics to the latest releases, modded servers, and multi-server proxy networks.</p>
         </div>
 
         <div class="grid-4">
@@ -338,7 +753,7 @@
           </div>
           <div class="engine-pill">
             <strong>Folia</strong>
-            <span>PaperMC's regionized multithreading engine for high concurrency</span>
+            <span>PaperMC regionized multithreading engine for high player counts</span>
           </div>
           <div class="engine-pill">
             <strong>FabricMC</strong>
@@ -386,8 +801,14 @@
         <div class="section-header">
           <span class="section-tag">Optional Add-On</span>
           <h2>MineServe Cloud: Custom Addresses &amp; R2 Backups</h2>
-          <p>MineServe is 100% free and open source forever. Upgrade to MineServe Cloud only if you want custom vanity subdomains and managed Cloudflare R2 backups across your Android and Linux servers.</p>
-          <p id="web-currency-note" style="display: none; font-size: 0.82rem; color: var(--emerald-light); margin-top: 8px;"></p>
+          <p>MineServe is 100% free, ad-free, and GPL-3.0 open source forever. Subscribing to MineServe Cloud is optional and directly funds ongoing independent development.</p>
+          <p id="web-currency-note" class="hidden" style="font-size: 13px; color: var(--md-sys-color-primary); margin-top: 8px;"></p>
+          <div style="display: flex; justify-content: center; margin-top: 16px;">
+            <div class="m3-segmented-row" role="tablist" aria-label="Billing interval">
+              <button type="button" class="m3-segmented-btn active" id="web-toggle-monthly" role="tab" aria-selected="true">Monthly</button>
+              <button type="button" class="m3-segmented-btn" id="web-toggle-yearly" role="tab" aria-selected="false">Yearly (Save ~17%)</button>
+            </div>
+          </div>
         </div>
 
         <div class="grid-3">
@@ -399,7 +820,7 @@
                 <span class="price-period">/ forever</span>
               </div>
               <ul class="feature-list">
-                <li>Unlimited local servers on Android &amp; Linux</li>
+                <li>Unlimited local servers on Android &amp; Desktop</li>
                 <li>All 11 Java, Modded, Bedrock &amp; Proxy engines</li>
                 <li>Multi-User LAN Web Admin, RBAC &amp; Audit Log</li>
                 <li>Automatic UPnP / NAT-PMP port forwarding</li>
@@ -407,26 +828,26 @@
                 <li>Local zip, Nextcloud/WebDAV &amp; SAF backups</li>
               </ul>
             </div>
-            <a href="#linux" class="btn btn-secondary">Install Free on Android or Linux</a>
+            <a href="#download" class="btn btn-secondary">Download Free Studio</a>
           </div>
 
           <div class="pricing-card featured">
             <div>
-              <h3>MineServe Plus <span class="badge-new">POPULAR</span></h3>
+              <h3>MineServe Plus <span class="badge-tag">7-DAY FREE TRIAL</span></h3>
               <div class="price-row">
                 <span id="web-price-plus" class="price-amount">£2.99</span>
-                <span class="price-period">/ month</span>
+                <span id="web-period-plus" class="price-period">/ month</span>
               </div>
               <ul class="feature-list">
                 <li>Everything in Free, plus:</li>
                 <li><strong>1 Custom Vanity Address</strong> (<span class="mono">name.play.mineserve.app</span>)</li>
                 <li><strong>Static Default Port 25565</strong> (no random port numbers)</li>
-                <li><strong>Remote Web Admin Relay</strong> (<span class="mono">name.panel.mineserve.app</span>)</li>
+                <li><strong>Remote HTTPS Web Admin &amp; Live Map</strong> (<span class="mono">name.panel.mineserve.app</span>)</li>
                 <li><strong>10 GB Encrypted Cloudflare R2</strong> cloud backup storage</li>
-                <li>Up to 25 Mbps tunnel bandwidth</li>
+                <li>Multi-region low-latency relays (US, UK, EU, AP)</li>
               </ul>
             </div>
-            <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start MineServe Plus →</a>
+            <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start 7-Day Free Trial</a>
           </div>
 
           <div class="pricing-card">
@@ -434,19 +855,69 @@
               <h3>MineServe Pro</h3>
               <div class="price-row">
                 <span id="web-price-pro" class="price-amount">£6.99</span>
-                <span class="price-period">/ month</span>
+                <span id="web-period-pro" class="price-period">/ month</span>
               </div>
               <ul class="feature-list">
                 <li>Everything in Plus, plus:</li>
-                <li><strong>Up to 5 Custom Vanity Addresses</strong></li>
-                <li><strong>Short Vanity Domain</strong> (<span class="mono">name.playms.uk</span>) or Bring Your Own Domain</li>
+                <li><strong>Up to 3 Custom Vanity Addresses</strong></li>
+                <li><strong>Short Vanity Domain</strong> (<span class="mono">name.playms.uk</span>) or Bring Your Own Domain (CNAME / SRV)</li>
                 <li><strong>50 GB Encrypted Cloudflare R2</strong> cloud backup storage</li>
-                <li>Up to 100 Mbps high-priority tunnel bandwidth</li>
                 <li>Simultaneous Java TCP + Bedrock UDP tunnel relays</li>
               </ul>
             </div>
-            <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-cloud">Start MineServe Pro →</a>
+            <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary">Start MineServe Pro</a>
           </div>
+        </div>
+
+        <div class="compare-table-wrap">
+          <table class="compare-table" aria-label="Compare self-hosted, MineServe Plus, and managed hosting">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Free Local (Bore / Playit)</th>
+                <th class="compare-highlight">MineServe Plus (£2.99/mo)</th>
+                <th>Managed Hosts (£10+/mo)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hardware &amp; RAM Limits</td>
+                <td>Your hardware (no artificial caps)</td>
+                <td class="compare-highlight">Your hardware (no artificial caps)</td>
+                <td>Strict per-GB RAM &amp; slot tiers</td>
+              </tr>
+              <tr>
+                <td>Join Address</td>
+                <td>Random port (e.g. <span class="mono">:41823</span>)</td>
+                <td class="compare-highlight">Clean <span class="mono">name.play.mineserve.app</span> (25565)</td>
+                <td>Shared or paid dedicated IP</td>
+              </tr>
+              <tr>
+                <td>Remote Browser Panel</td>
+                <td>Local Wi-Fi / LAN only</td>
+                <td class="compare-highlight">HTTPS <span class="mono">name.panel.mineserve.app</span></td>
+                <td>Web panel included</td>
+              </tr>
+              <tr>
+                <td>Off-Device Backups</td>
+                <td>Manual / self-hosted WebDAV</td>
+                <td class="compare-highlight">10 GB encrypted Cloudflare R2</td>
+                <td>Limited snapshot slots</td>
+              </tr>
+              <tr>
+                <td>Third-Party Tunnel Setup</td>
+                <td>Requires external agent / account</td>
+                <td class="compare-highlight">Built-in regional relays</td>
+                <td>Not needed</td>
+              </tr>
+              <tr>
+                <td>Supports Open Source</td>
+                <td>Free GPL-3.0 client</td>
+                <td class="compare-highlight">Directly funds MineServe</td>
+                <td>Closed commercial host</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -459,26 +930,41 @@
           <h2>Frequently Asked Questions</h2>
         </div>
 
-        <div class="faq-list">
+        <div class="m3-table faq-list">
           <div class="faq-item open">
-            <button class="faq-q" type="button"><span>Does MineServe require root access on Android?</span><span>+</span></button>
+            <button class="faq-q" type="button">
+              <span>Does MineServe require root access on Android?</span>
+              <span class="mono">+</span>
+            </button>
             <div class="faq-a">No. On Android, MineServe runs an isolated Ubuntu rootfs inside PRoot completely in userspace, so your phone or tablet never needs to be rooted.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button"><span>How does the new Linux Desktop &amp; Headless Server (Beta) work?</span><span>+</span></button>
-            <div class="faq-a">On Linux, MineServe runs natively without PRoot or container overhead. You can install it with a single command (curl -fsSL https://mineserve.app/install.sh | bash) and run either the native Compose Desktop GUI with system tray integration or the headless daemon (mineserve --headless / systemd service) controlled from any browser on port 8080.</div>
+            <button class="faq-q" type="button">
+              <span>How do Desktop and Headless WebUI (:8080) work?</span>
+              <span class="mono">+</span>
+            </button>
+            <div class="faq-a">On Linux, Windows, and macOS, MineServe runs natively without PRoot or container overhead. On Linux you can install with one command (<span class="mono">curl -fsSL https://mineserve.app/install.sh | bash</span>) and run either the Compose Desktop GUI or the headless daemon (<span class="mono">mineserve --headless</span>) controlled from any browser on port 8080.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button"><span>Is MineServe free? Do I need MineServe Cloud?</span><span>+</span></button>
-            <div class="faq-a">Yes, both the Android app and the Linux Desktop &amp; Headless Server are 100% free, ad-free, and GPL-3.0 open source. All local hosting, Multi-User Web Admin, UPnP/Bore/Playit networking, and WebDAV backups are free. MineServe Cloud is strictly optional if you want custom *.play.mineserve.app (or *.playms.uk) addresses and Cloudflare R2 cloud backups.</div>
+            <button class="faq-q" type="button">
+              <span>Is MineServe free? Do I need MineServe Cloud?</span>
+              <span class="mono">+</span>
+            </button>
+            <div class="faq-a">Yes, the Android app, Desktop Studio, and Headless WebUI are 100% free, ad-free, and GPL-3.0 open source. All local hosting, Multi-User Web Admin, UPnP/Bore/Playit networking, and WebDAV backups are free. MineServe Cloud is strictly optional for vanity <span class="mono">*.play.mineserve.app</span> / <span class="mono">*.playms.uk</span> addresses and Cloudflare R2 backups.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button"><span>How much RAM does my device need?</span><span>+</span></button>
+            <button class="faq-q" type="button">
+              <span>How much RAM does my device need?</span>
+              <span class="mono">+</span>
+            </button>
             <div class="faq-a">At least 4 GB of RAM is recommended for Vanilla or Paper servers with a few friends, and 6 GB to 8 GB+ for larger modded Fabric, NeoForge, or Forge worlds.</div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button"><span>Can I import an existing server, world, or Modrinth .mrpack modpack?</span><span>+</span></button>
-            <div class="faq-a">Yes. You can import a complete existing server .zip archive or a Modrinth .mrpack modpack directly during server creation (with automatic client-only mod filtering so client mods never crash your server), or import .zip and .mcworld world saves in the World tab.</div>
+            <button class="faq-q" type="button">
+              <span>Can I import an existing server, world, or Modrinth .mrpack modpack?</span>
+              <span class="mono">+</span>
+            </button>
+            <div class="faq-a">Yes. You can import a complete existing server <span class="mono">.zip</span> archive or a Modrinth <span class="mono">.mrpack</span> modpack directly during server creation (with automatic client-only mod filtering so client mods never crash your server), or import <span class="mono">.zip</span> and <span class="mono">.mcworld</span> saves in the World tab.</div>
           </div>
         </div>
       </div>
@@ -489,12 +975,15 @@
     <div class="container footer-inner">
       <div>
         <div>MineServe (GPL-3.0) · Not affiliated with Mojang or Microsoft.</div>
-        <div style="font-size: 0.78rem; margin-top: 4px; opacity: 0.85;">MineServe Cloud is operated by ZEDCEE LTD (Registered in England &amp; Wales, Company No. 16425948) · 50 Princes Street, Ipswich, England, IP1 1RJ · <a href="mailto:devwithzachary@pm.me" style="color: inherit;">devwithzachary@pm.me</a></div>
+        <div style="font-size: 12.5px; margin-top: 4px;">MineServe Cloud is operated by ZEDCEE LTD (Registered in England &amp; Wales, Company No. 16425948) · 50 Princes Street, Ipswich, England, IP1 1RJ · <a href="mailto:devwithzachary@pm.me" style="text-decoration: underline;">devwithzachary@pm.me</a></div>
       </div>
       <div class="footer-links">
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
         <a href="https://github.com/devwithzachary/MineServe" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer">MineServe Cloud</a>
         <a href="https://play.google.com/store/apps/details?id=com.devwithzachary.mineserve" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a href="https://f-droid.org/packages/com.devwithzachary.mineserve/" target="_blank" rel="noopener noreferrer">F-Droid</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </div>

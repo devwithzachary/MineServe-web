@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -7,173 +7,142 @@
   <title>Terms of Service - MineServe</title>
 
   <meta name="title" content="Terms of Service - MineServe">
-  <meta name="description" content="Terms of Service for the MineServe Android application and optional MineServe Cloud subscription services.">
+  <meta name="description" content="Terms of Service for MineServe and optional MineServe Cloud subscriptions.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#070b12">
   <link rel="canonical" href="https://mineserve.app/terms.html">
 
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="css/mineserve-m3-tokens.css">
   <link rel="stylesheet" href="css/style.css">
 
   <script defer src="https://stats.devwithzachary.com/stats" data-website-id="0f927c80-a65d-484a-ac6d-f5de10c83bec"></script>
-
-  <style>
-    .legal-wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 48px 0 72px;
-    }
-    .legal-header {
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 20px;
-      margin-bottom: 28px;
-    }
-    .legal-header h1 {
-      font-family: "Outfit", sans-serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin: 0 0 8px;
-    }
-    .legal-meta {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.82rem;
-      color: var(--emerald-light);
-    }
-    .legal-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      margin-bottom: 18px;
-    }
-    .legal-card h2 {
-      font-family: "Outfit", sans-serif;
-      font-size: 1.25rem;
-      margin: 0 0 10px;
-      color: var(--text-primary);
-    }
-    .legal-card p,
-    .legal-card li {
-      color: var(--text-secondary);
-      font-size: 0.94rem;
-      line-height: 1.7;
-    }
-    .legal-card ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .legal-card code {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.84rem;
-      background: rgba(148, 163, 184, 0.12);
-      padding: 2px 6px;
-      border-radius: 6px;
-      color: var(--emerald-light);
-    }
-    .legal-card strong {
-      color: var(--text-primary);
-    }
-  </style>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("mineserve_web_theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (_) {}
+    })();
+  </script>
 </head>
 
 <body>
-  <header class="site-header">
+  <header id="site-header" class="site-header">
     <div class="container nav-inner" id="nav-inner">
       <a href="index.html" class="brand">
-        <img src="assets/logo.png" alt="MineServe Logo">
+        <img src="assets/logo.svg" data-fallback-src="assets/logo.png" alt="MineServe Logo" width="34" height="34">
         <span>MineServe</span>
-        <span class="version-pill">v1.7.0</span>
+        <span class="version-pill">v1.9.0</span>
       </a>
       <nav class="nav-links" aria-label="Primary Navigation">
         <a href="index.html#features">Features</a>
-        <a href="index.html#cloud">MineServe Cloud</a>
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
       </nav>
       <div class="nav-actions">
-        <a href="index.html" class="btn btn-secondary btn-sm">Back to Home</a>
+        <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Switch to light mode" title="Toggle Light / Dark theme">
+          <svg id="theme-icon-sun" class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17q-2.075 0-3.537-1.463T7 12t1.463-3.537T12 7t3.538 1.463T17 12t-1.463 3.538T12 17m-7-4H1v-2h4zm18 0h-4v-2h4zM11 5V1h2v4zm0 18v-4h2v4zM6.4 7.75L3.875 5.325L5.3 3.85l2.4 2.5zm12.3 12.4l-2.425-2.525L17.6 16.25l2.525 2.425zM16.25 6.4l2.425-2.525L20.15 5.3l-2.5 2.4zM3.85 18.7l2.525-2.425L7.75 17.6l-2.425 2.525z"/></svg>
+          <svg id="theme-icon-moon" class="ms-icon hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21q-3.75 0-6.375-2.625T3 12t2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21"/></svg>
+        </button>
+        <a href="index.html" class="btn btn-tonal btn-sm">Back to Home</a>
       </div>
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
+      <button class="icon-btn mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation" aria-expanded="false">
+        <svg class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg>
+      </button>
     </div>
   </header>
 
-  <main class="container legal-wrap">
-    <div class="legal-header">
-      <h1>Terms of Service</h1>
-      <div class="legal-meta">Last Updated: November 19, 2026 · App &amp; Optional MineServe Cloud</div>
+  <main class="container">
+    <div class="doc-shell">
+      <article class="doc-article">
+        <div class="doc-header">
+          <h1>Terms of Service</h1>
+          <div class="doc-meta">Last Updated: November 19, 2026 · App &amp; Optional MineServe Cloud</div>
+        </div>
+
+        <section id="operator" class="doc-section">
+          <h2>1. Service Operator, Acceptance &amp; Scope</h2>
+          <p>
+            <strong>MineServe Cloud</strong> and <code>mineserve.app</code> are operated by <strong>ZEDCEE LTD</strong> (Private Limited Company registered in England and Wales, Company No. <strong>16425948</strong>, Registered Office: 50 Princes Street, Ipswich, England, IP1 1RJ).
+          </p>
+          <p>MineServe is not affiliated with Mojang AB or Microsoft Corporation. Hosting a Minecraft server requires accepting the official <a href="https://www.minecraft.net/en-us/eula" target="_blank" rel="noopener noreferrer" class="doc-link">Minecraft EULA</a>.</p>
+        </section>
+
+        <section id="license" class="doc-section">
+          <h2>2. Open-Source Software License (GPL-3.0)</h2>
+          <p>
+            The MineServe application (Android, Desktop, and Headless WebUI) is free, open-source software licensed under the <strong>GNU General Public License v3.0 (GPL-3.0)</strong>. Source code is available on <a href="https://github.com/devwithzachary/MineServe" target="_blank" rel="noopener noreferrer" class="doc-link">GitHub</a>.
+          </p>
+        </section>
+
+        <section id="billing" class="doc-section">
+          <h2>3. Optional MineServe Cloud Subscriptions &amp; Refunds</h2>
+          <ul>
+            <li><strong>Optional Add-On:</strong> MineServe Plus (<code>£2.99/mo</code> or <code>£29.99/yr</code>) and MineServe Pro (<code>£6.99/mo</code> or <code>£69.99/yr</code>) are strictly optional and billed via <strong>Stripe</strong>.</li>
+            <li><strong>14-Day Refund Policy:</strong> Request a full refund within 14 days of your initial subscription purchase by emailing <a href="mailto:devwithzachary@pm.me" class="doc-link">devwithzachary@pm.me</a>.</li>
+            <li><strong>Cancellation:</strong> Cancel anytime via <strong>Manage Billing</strong> in the Cloud Portal; paid benefits continue through the end of the billing cycle.</li>
+          </ul>
+        </section>
+
+        <section id="acceptable-use" class="doc-section">
+          <h2>4. Acceptable Use</h2>
+          <ul>
+            <li>Do not proxy non-Minecraft/Web Admin traffic, conduct DDoS attacks, or distribute malware via MineServe Cloud relays.</li>
+            <li>Do not claim abusive or trademark-infringing subdomains.</li>
+            <li>Do not attempt to bypass storage quotas, rate limits, or access another user's data.</li>
+          </ul>
+        </section>
+
+        <section id="liability" class="doc-section">
+          <h2>5. Backups, Availability &amp; Liability</h2>
+          <p>
+            MineServe and MineServe Cloud are provided "as is" without warranties of uninterrupted uptime. Always keep a local copy of critical worlds. Nothing in these terms limits statutory consumer rights under applicable law.
+          </p>
+        </section>
+
+        <section id="contact" class="doc-section">
+          <h2>6. Governing Law &amp; Contact</h2>
+          <p>
+            Governed by the laws of <strong>England and Wales</strong>. Contact <a href="mailto:devwithzachary@pm.me" class="doc-link">devwithzachary@pm.me</a>.
+          </p>
+        </section>
+      </article>
+
+      <aside class="doc-toc" aria-label="Table of Contents">
+        <div class="doc-toc-title">On This Page</div>
+        <nav>
+          <a href="#operator">1. Service Operator</a>
+          <a href="#license">2. GPL-3.0 License</a>
+          <a href="#billing">3. Cloud Billing</a>
+          <a href="#acceptable-use">4. Acceptable Use</a>
+          <a href="#liability">5. Availability &amp; Liability</a>
+          <a href="#contact">6. Governing Law</a>
+        </nav>
+      </aside>
     </div>
-
-    <section class="legal-card">
-      <h2>1. Service Operator, Acceptance &amp; Scope</h2>
-      <p>
-        By using the <strong>MineServe</strong> Android application or subscribing to <strong>MineServe Cloud</strong> (<code>cloud.mineserve.app</code>), you agree to these Terms of Service. The MineServe Android application is licensed under the GNU General Public License v3.0 (GPL-3.0). MineServe is an independent tool and is not affiliated with, endorsed by, or associated with Mojang AB or Microsoft Corporation.
-      </p>
-      <ul>
-        <li><strong>Operator:</strong> ZEDCEE LTD (Private Limited Company registered in England and Wales, Company No. 16425948)</li>
-        <li><strong>Registered Office:</strong> 50 Princes Street, Ipswich, England, IP1 1RJ</li>
-        <li><strong>Contact Email:</strong> <a href="mailto:devwithzachary@pm.me" style="color: var(--emerald-light);">devwithzachary@pm.me</a></li>
-      </ul>
-    </section>
-
-    <section class="legal-card">
-      <h2>2. Minecraft EULA &amp; Third-Party Software</h2>
-      <p>
-        Running a Minecraft server requires accepting the official <a href="https://aka.ms/MinecraftEULA" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-light);">Minecraft EULA</a>. You are solely responsible for complying with the licenses and terms of any server software, plugins, mods, or modpacks you install.
-      </p>
-    </section>
-
-    <section class="legal-card">
-      <h2>3. Optional MineServe Cloud Subscriptions &amp; Refunds</h2>
-      <ul>
-        <li><strong>Plans &amp; Auto-Renewal:</strong> MineServe Plus (<code>£2.99/month</code> or <code>£29.99/year</code>) and MineServe Pro (<code>£6.99/month</code> or <code>£69.99/year</code>) are optional paid add-on plans billed through <strong>Stripe</strong> on behalf of <strong>ZEDCEE LTD</strong>. Subscriptions renew automatically unless cancelled before the next billing date.</li>
-        <li><strong>14-Day Refund Policy:</strong> Under UK and EU consumer protection rules, you may cancel and request a full refund within <strong>14 days</strong> of your initial subscription purchase by emailing <a href="mailto:devwithzachary@pm.me" style="color: var(--emerald-light);">devwithzachary@pm.me</a> with your account email address.</li>
-        <li><strong>Cancellation &amp; Downgrades:</strong> You can manage or cancel your subscription anytime from the Stripe Billing Portal inside <code>cloud.mineserve.app</code>. Unless a 14-day refund is requested, your paid features remain active until the end of the current billing period.</li>
-        <li><strong>Storage &amp; Subdomain Quotas:</strong> If your plan expires or downgrades below your current backup storage or subdomain count, existing backups remain downloadable for a 30-day grace period before cleanup, and excess subdomains may be released.</li>
-      </ul>
-    </section>
-
-    <section class="legal-card">
-      <h2>4. Acceptable Use of Cloud Relays &amp; Storage</h2>
-      <p>When using MineServe Cloud relays (<code>*.play.mineserve.app</code>, <code>*.playms.uk</code>, <code>*.panel.mineserve.app</code>) or R2 backup storage, you agree not to:</p>
-      <ul>
-        <li>Use relay tunnels for non-Minecraft/Web Admin traffic, botnets, DDoS attacks, phishing, or illegal content distribution.</li>
-        <li>Claim subdomains that impersonate official brands, trademarks, or include abusive language.</li>
-        <li>Attempt to bypass storage quotas, rate limits, or access another user's account or backup objects.</li>
-      </ul>
-      <p>ZEDCEE LTD reserves the right to suspend or terminate accounts that violate these rules or threaten relay network stability.</p>
-    </section>
-
-    <section class="legal-card">
-      <h2>5. Backups, Availability &amp; Liability</h2>
-      <p>
-        While MineServe Cloud uses reliable infrastructure (AWS and Cloudflare R2), MineServe and MineServe Cloud are provided "as is" without warranties of uninterrupted uptime. Always keep a local copy of critical worlds. To the maximum extent permitted by law, ZEDCEE LTD and MineServe's maintainers are not liable for any indirect damages, hardware wear, battery degradation, or world data loss. Nothing in these terms limits any statutory consumer rights that cannot be excluded under applicable law.
-      </p>
-    </section>
-
-    <section class="legal-card">
-      <h2>6. Governing Law &amp; Contact</h2>
-      <p>
-        These Terms of Service are governed by and construed in accordance with the laws of <strong>England and Wales</strong>. Questions regarding these Terms of Service, refunds, or MineServe Cloud billing can be sent to <a href="mailto:devwithzachary@pm.me" style="color: var(--emerald-light);">devwithzachary@pm.me</a>.
-      </p>
-    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
         <div>MineServe (GPL-3.0) · Not affiliated with Mojang or Microsoft.</div>
-        <div style="font-size: 0.78rem; margin-top: 4px; opacity: 0.85;">Operated by ZEDCEE LTD (Company No. 16425948) · 50 Princes Street, Ipswich, England, IP1 1RJ · <a href="mailto:devwithzachary@pm.me" style="color: inherit;">devwithzachary@pm.me</a></div>
+        <div style="font-size: 12.5px; margin-top: 4px;">Operated by ZEDCEE LTD (Company No. 16425948) · 50 Princes Street, Ipswich, England, IP1 1RJ · <a href="mailto:devwithzachary@pm.me" class="doc-link">devwithzachary@pm.me</a></div>
       </div>
       <div class="footer-links">
         <a href="index.html">Home</a>
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
         <a href="https://cloud.mineserve.app" target="_blank" rel="noopener noreferrer">MineServe Cloud</a>
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
@@ -185,4 +154,3 @@
 </body>
 
 </html>
-

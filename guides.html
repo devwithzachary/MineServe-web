@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Start Guides - MineServe</title>
+  <meta name="description" content="Setup guides for MineServe on Rootless Android, Linux Desktop, Headless :8080 WebUI, Windows, macOS, Docker, Java + Bedrock cross-play, and panel comparisons.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/mineserve-m3-tokens.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="https://stats.devwithzachary.com/stats"
+    data-website-id="0f927c80-a65d-484a-ac6d-f5de10c83bec"
+    data-domains="mineserve.app"></script>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("mineserve_web_theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (_) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <header id="site-header" class="site-header">
+    <div class="container nav-inner" id="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/logo.svg" data-fallback-src="assets/logo.png" alt="MineServe Logo" width="34" height="34">
+        <span>MineServe</span>
+        <span class="version-pill">v1.9.0</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html#features">Features</a>
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="icon-btn" type="button" aria-label="Switch to light mode" title="Toggle Light / Dark theme">
+          <svg id="theme-icon-sun" class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17q-2.075 0-3.537-1.463T7 12t1.463-3.537T12 7t3.538 1.463T17 12t-1.463 3.538T12 17m-7-4H1v-2h4zm18 0h-4v-2h4zM11 5V1h2v4zm0 18v-4h2v4zM6.4 7.75L3.875 5.325L5.3 3.85l2.4 2.5zm12.3 12.4l-2.425-2.525L17.6 16.25l2.525 2.425zM16.25 6.4l2.425-2.525L20.15 5.3l-2.5 2.4zM3.85 18.7l2.525-2.425L7.75 17.6l-2.425 2.525z"/></svg>
+          <svg id="theme-icon-moon" class="ms-icon hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21q-3.75 0-6.375-2.625T3 12t2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21"/></svg>
+        </button>
+        <a href="index.html#download" class="btn btn-tonal btn-sm">Download</a>
+      </div>
+      <button class="icon-btn mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation" aria-expanded="false">
+        <svg class="ms-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="doc-shell">
+      <article class="doc-article">
+        <div class="doc-header">
+          <h1>Quick Start Guides</h1>
+          <div class="doc-meta">MineServe · Android, Linux, macOS (Beta), Windows (Beta) &amp; Docker · <a href="https://github.com/devwithzachary/MineServe/blob/main/USER_GUIDE.md" target="_blank" rel="noopener noreferrer" class="doc-link">Full USER_GUIDE.md on GitHub</a></div>
+        </div>
+
+        <section id="android" class="doc-section">
+          <h2>1. Rootless Android Setup</h2>
+          <p>MineServe runs an isolated Ubuntu userspace inside PRoot with zero root permissions required.</p>
+          <ul>
+            <li>Install from <a href="https://play.google.com/store/apps/details?id=com.devwithzachary.mineserve" target="_blank" rel="noopener noreferrer" class="doc-link">Google Play</a>, <a href="https://f-droid.org/packages/com.devwithzachary.mineserve/" target="_blank" rel="noopener noreferrer" class="doc-link">F-Droid</a>, or GitHub Releases (<span class="mono">-release.apk</span>).</li>
+            <li>On first launch, MineServe downloads the Ubuntu rootfs and OpenJDK 21 automatically (or lets you import a local <span class="mono">.tar.gz</span> archive).</li>
+            <li>Set Android <strong>Battery Usage</strong> to <strong>Unrestricted</strong> so background worlds stay online, and use the 2-step wizard to create your server.</li>
+          </ul>
+        </section>
+
+        <section id="linux-desktop" class="doc-section">
+          <h2>2. Linux Desktop, Headless :8080 &amp; APT/RPM Repos</h2>
+          <p>Install the native Linux package (<span class="mono">.deb</span>, <span class="mono">.pkg.tar.zst</span>, or portable bundle) in one command:</p>
+          <pre class="doc-code-block"># Desktop GUI + CLI
+curl -fsSL https://mineserve.app/install.sh | bash
+
+# Headless systemd service on port 8080
+curl -fsSL https://mineserve.app/install.sh | bash -s -- --headless
+
+# Rootless user install (~/.local/opt/mineserve)
+curl -fsSL https://mineserve.app/install.sh | bash -s -- --user</pre>
+          <h3>Signed APT &amp; RPM Repositories (v1.9.0+)</h3>
+          <pre class="doc-code-block"># Debian / Ubuntu (APT)
+curl -fsSL https://mineserve.app/apt/mineserve-archive-keyring.gpg | sudo tee /usr/share/keyrings/mineserve-archive-keyring.gpg >/dev/null
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mineserve-archive-keyring.gpg] https://mineserve.app/apt stable main" | sudo tee /etc/apt/sources.list.d/mineserve.list >/dev/null
+sudo apt-get update && sudo apt-get install mineserve
+
+# Fedora / RHEL (DNF)
+sudo curl -fsSL https://mineserve.app/rpm/mineserve.repo -o /etc/yum.repos.d/mineserve.repo
+sudo dnf install mineserve</pre>
+          <h3>Useful CLI Flags</h3>
+          <pre class="doc-code-block">mineserve --headless --port 8080 --bind 0.0.0.0
+mineserve --reset-admin</pre>
+        </section>
+
+        <section id="macos" class="doc-section">
+          <h2>3. macOS Beta (Apple Silicon &amp; Intel)</h2>
+          <ul>
+            <li>Download <span class="mono">MineServe-&lt;ver&gt;-macos-arm64.dmg</span> (Apple Silicon) or <span class="mono">MineServe-&lt;ver&gt;-macos-x64.dmg</span> (Intel) from GitHub Releases and drag <strong>MineServe.app</strong> to <span class="mono">/Applications</span>.</li>
+            <li><strong>Gatekeeper (Beta):</strong> Official Apple Developer ID notarization arrives in <span class="mono">v2.0.0</span>. Until then, allow the app in <strong>System Settings -&gt; Privacy &amp; Security -&gt; Open Anyway</strong> or run:</li>
+          </ul>
+          <pre class="doc-code-block">xattr -dr com.apple.quarantine /Applications/MineServe.app
+/Applications/MineServe.app/Contents/MacOS/MineServe --headless</pre>
+          <ul>
+            <li>For Bedrock players on macOS, choose <strong>Bedrock (Geyser)</strong> (Paper + GeyserMC) because Mojang does not publish a native macOS Bedrock Dedicated binary.</li>
+          </ul>
+        </section>
+
+        <section id="windows" class="doc-section">
+          <h2>4. Windows Beta (x64)</h2>
+          <ul>
+            <li>Install via <span class="mono">MineServe-&lt;ver&gt;-windows-x64.msi</span> (recommended), <span class="mono">.exe</span>, or extract the portable <span class="mono">.zip</span> and run <span class="mono">bin\mineserve.bat</span> (pass <span class="mono">--headless</span> for WebUI-only mode).</li>
+            <li>Install via Winget: <span class="mono">winget install DevWithZachary.MineServe</span>.</li>
+            <li><strong>SmartScreen (Beta):</strong> Official SignPath Foundation code signing arrives in <span class="mono">v2.0.0</span>. Click <strong>More info -&gt; Run anyway</strong> if prompted.</li>
+          </ul>
+        </section>
+
+        <section id="docker" class="doc-section">
+          <h2>5. Docker &amp; Docker Compose</h2>
+          <pre class="doc-code-block">docker run -d --name mineserve \
+  -p 8080:8080 -p 8081:8081 \
+  -p 25565:25565/tcp -p 25565:25565/udp -p 19132:19132/udp \
+  -v mineserve-data:/data \
+  ghcr.io/devwithzachary/mineserve:latest
+
+# View generated admin password
+docker logs mineserve | head -n 40</pre>
+        </section>
+
+        <section id="tunnels" class="doc-section">
+          <h2>6. Tunnels, Modpacks, Backups &amp; Proxies</h2>
+          <p>Every server supports local LAN play, automatic UPnP/NAT-PMP router forwarding, and free <span class="mono">bore.pub</span> / <span class="mono">Playit.gg</span> tunnels that work behind CGNAT and mobile networks.</p>
+          <ul>
+            <li><strong>Networking:</strong> Open <strong>Management -&gt; Public Multiplayer Tunneling</strong> to enable Bore, Playit.gg, UPnP, or optional MineServe Cloud vanity domains (<span class="mono">*.play.mineserve.app</span> / <span class="mono">*.playms.uk</span> + remote <span class="mono">*.panel.mineserve.app</span> Web Admin).</li>
+            <li><strong>.mrpack Filtering:</strong> Import Modrinth <span class="mono">.mrpack</span> archives; client-only mods are automatically disabled as <span class="mono">.jar.disabled</span> so dedicated servers boot cleanly.</li>
+            <li><strong>Off-Device Backups:</strong> Sync <span class="mono">.zip</span> snapshots to Nextcloud/WebDAV (with Test Connection &amp; auto-sync), Android SAF folders, or encrypted Cloudflare R2 in MineServe Cloud.</li>
+          </ul>
+        </section>
+
+        <section id="crossplay" class="doc-section">
+          <h2>7. Java + Bedrock Cross-Play (GeyserMC)</h2>
+          <p>Let PC (Java Edition) and console, mobile, or Windows Bedrock players join the same world with zero manual plugin wiring:</p>
+          <ul>
+            <li>In the 2-step Create Server wizard, pick <strong>Bedrock (Geyser)</strong>. MineServe installs PaperMC, GeyserMC, and Floodgate together automatically.</li>
+            <li>Java players connect on TCP port <span class="mono">25565</span>, while Bedrock players connect on UDP port <span class="mono">19132</span>.</li>
+            <li>Bedrock friends do not need a Java Edition account when Floodgate is enabled.</li>
+            <li>For public play behind CGNAT, use Playit.gg or MineServe Pro (simultaneous Java TCP + Bedrock UDP relays).</li>
+          </ul>
+        </section>
+
+        <section id="comparison" class="doc-section">
+          <h2>8. How MineServe Compares</h2>
+          <p>Choosing the right tool depends on whether you want a single-node studio, a multi-node Docker panel, or ad-supported cloud hosting:</p>
+          <div class="compare-table-wrap">
+            <table class="compare-table" aria-label="Compare MineServe with Crafty Controller, Pterodactyl, and Aternos">
+              <thead>
+                <tr>
+                  <th>Tool</th>
+                  <th>Platforms</th>
+                  <th>Setup</th>
+                  <th>License &amp; Ads</th>
+                  <th>Built-In Tunnels</th>
+                  <th>Best Fit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="compare-highlight">MineServe</td>
+                  <td>Android, Linux, Win, macOS, Docker</td>
+                  <td>1-line script, APK, or Docker</td>
+                  <td>GPL-3.0, zero ads</td>
+                  <td>Bore, Playit.gg, UPnP, Cloud</td>
+                  <td>Single-host cross-platform servers &amp; homelabs</td>
+                </tr>
+                <tr>
+                  <td>Crafty Controller</td>
+                  <td>Linux, Win, macOS, Docker</td>
+                  <td>Docker or Python install</td>
+                  <td>GPL-3.0, zero ads</td>
+                  <td>Manual port forward / DIY</td>
+                  <td>Dedicated home servers &amp; multi-game panels</td>
+                </tr>
+                <tr>
+                  <td>Pterodactyl / Pelican</td>
+                  <td>Linux + Docker</td>
+                  <td>Nginx, MariaDB, Redis, Wings</td>
+                  <td>MIT, zero ads</td>
+                  <td>Manual / VPS public IP</td>
+                  <td>Multi-node VPS clusters &amp; commercial hosts</td>
+                </tr>
+                <tr>
+                  <td>Aternos</td>
+                  <td>Web browser (cloud)</td>
+                  <td>Browser signup</td>
+                  <td>Closed, web ad-funded</td>
+                  <td>Built-in</td>
+                  <td>Quick temporary servers with queue/RAM limits</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+
+      <aside class="doc-toc" aria-label="Table of Contents">
+        <div class="doc-toc-title">Guides</div>
+        <nav>
+          <a href="#android">1. Rootless Android</a>
+          <a href="#linux-desktop">2. Linux &amp; APT/RPM</a>
+          <a href="#macos">3. macOS Beta</a>
+          <a href="#windows">4. Windows Beta</a>
+          <a href="#docker">5. Docker</a>
+          <a href="#tunnels">6. Tunnels &amp; Backups</a>
+          <a href="#crossplay">7. Java + Bedrock Cross-Play</a>
+          <a href="#comparison">8. How MineServe Compares</a>
+        </nav>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div>MineServe (GPL-3.0) · Not affiliated with Mojang or Microsoft.</div>
+        <div style="font-size: 12.5px; margin-top: 4px;">Operated by ZEDCEE LTD (Company No. 16425948) · 50 Princes Street, Ipswich, England, IP1 1RJ · <a href="mailto:devwithzachary@pm.me" class="doc-link">devwithzachary@pm.me</a></div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="guides.html">Guides</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
