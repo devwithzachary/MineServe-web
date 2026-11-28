@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.dataset.theme = resolved;
     try {
       localStorage.setItem("mineserve_web_theme", resolved);
-    } catch (_) {}
+    } catch (_) { /* Ignore unavailable browser storage */ }
     if (sunIcon && moonIcon) {
       sunIcon.classList.toggle("hidden", resolved === "light");
       moonIcon.classList.toggle("hidden", resolved === "dark");
@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
       applyReleaseAssets(cached.data);
       return;
     }
-  } catch (_) {}
+  } catch (_) { /* Ignore unavailable browser storage */ }
 
   fetch("https://api.github.com/repos/devwithzachary/MineServe/releases?per_page=5")
     .then((res) => (res.ok ? res.json() : null))
@@ -389,7 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!Array.isArray(data)) return;
       try {
         sessionStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data }));
-      } catch (_) {}
+      } catch (_) { /* Ignore unavailable browser storage */ }
       applyReleaseAssets(data);
     })
     .catch(() => {});
